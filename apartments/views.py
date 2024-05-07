@@ -9,20 +9,39 @@ def home(request):
     booked = "No" if not random_house.booked else "Yes"
     images = random_house.image_set.all()
     image = images[randint(0,(len(images) -1))]
-    print(image.image.url)
+    
+    houses = House.objects.all()
+    images = []
+    
+    for house in houses:
+        images.append(house.image_set.all()[randint(0,(len(house.image_set.all()) -1))])
+        
+    houses_and_images = zip(houses, images)
+    
     context = {
         "title":"EVERGRACE APARTMENTS",
         "house":random_house,
         "booked":booked,
         "taken":taken,
-        "image": image
+        "image": image,
+        "houses":houses_and_images
     }
     return render(request, "index.html", context)
 
 def properties(request):
+    houses = House.objects.all()
+    images = []
+    
+    for house in houses:
+        images.append(house.image_set.all()[randint(0,(len(house.image_set.all()) -1))])
+        
+    houses_and_images = zip(houses, images)
+    
     context = {
-        "title":"EVERGRACE APARTMENTS"
+        "title":"EVERGRACE APARTMENTS",
+        "houses":houses_and_images	
     }
+    
     return render(request, "properties.html", context)
 
 def details(request):
