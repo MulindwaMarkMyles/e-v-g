@@ -1,0 +1,462 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <style>
+        .main-banner .item-1 {
+        background-image: url("{% static 'images/fresh-ones/image-0.jpg' %}");
+        }
+
+        .main-banner .item-2 {
+        background-image: url("{% static 'images/fresh-ones/image-10.jpg' %}");
+        }
+
+        .main-banner .item-3 {
+        background-image: url("{% static 'images/fresh-ones/image-15.jpg' %}");
+        }
+        
+        .main-banner .item-4 {
+        background-image: url("{% static 'images/fresh-ones/image-12.jpg' %}");
+        }
+        .video {
+            background-image: url("{% static 'images/banner-2.jpg' %}");
+        }
+        .contact {
+            background-image: url("{% static 'images/banner-3.jpg' %}");
+        }
+
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+        
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+
+    <!-- ***** Preloader Start ***** -->
+    <div id="js-preloader" class="js-preloader">
+        <div class="preloader-inner">
+            <span class="dot"></span>
+            <div class="dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <!-- ***** Preloader End ***** -->
+
+    <div class="main-banner">
+        <div class="owl-carousel owl-banner">
+            <div class="item item-1">
+                <div class="header-text">
+                    <span class="category">Makerere, <em>Bukesa</em></span>
+                    <h2>Hurry!<br>Get this offer while it lasts</h2>
+                </div>
+            </div>
+            <div class="item item-2">
+                <div class="header-text">
+                    <span class="category">Makerere, <em>Bukesa</em></span>
+                    <h2>Be Quick!<br>Get the best rental in town</h2>
+                </div>
+            </div>
+            <div class="item item-3">
+                <div class="header-text">
+                    <span class="category">Makerere, <em>Bukesa</em></span>
+                    <h2>Act Now!<br>Get the highest level house</h2>
+                </div>
+            </div>
+            <div class="item item-4">
+                <div class="header-text">
+                    <span class="category">Makerere, <em>Bukesa</em></span>
+                    <h2>Hurry!<br>We await you</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="featured section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="left-image">
+                        <img src="{% static 'images/fresh-ones/image-5.jpg' %}" alt="">
+                        <a href="#"><img src="{% static 'assets/images/featured-icon.png' %}" alt=""
+                                style="max-width: 60px; padding: 0px;"></a>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="section-heading">
+                        <h6>| Featured</h6>
+                        <h2>Best Apartment &amp; Nice view</h2>
+                    </div>
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Why Us?
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                     <strong>Evergrace</strong> offers the best apartments in Town with world class treatment and  services.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Why is this the best?
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    On top of the <strong>world class treatment</strong>, we offer the best prices in town.
+                                    And so much more come see for yourself.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="info-table">
+                        <ul>
+                            <li>
+                                <img src="{% static 'assets/images/info-icon-01.png' %}" alt="" style="max-width: 52px;">
+                                <h4>100 m2<br><span>Total Flat Space</span></h4>
+                            </li>
+                            <li>
+                                <img src="{% static 'assets/images/info-icon-02.png' %}" alt="" style="max-width: 52px;">
+                                <h4>Contract<br><span>Contract Ready</span></h4>
+                            </li>
+                            <li>
+                                <img src="{% static 'assets/images/info-icon-03.png' %}" alt="" style="max-width: 52px;">
+                                <h4>Bank<br><span>Payment</span></h4>
+                            </li>
+                            <li>
+                                <img src="{% static 'assets/images/info-icon-04.png' %}" alt="" style="max-width: 52px;">
+                                <h4>Safety<br><span>24/7 Control</span></h4>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="video section">
+    <div class="overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 offset-lg-4">
+                    <div class="section-heading text-center">
+                        <h6>| Video View</h6>
+                        <h2>Get Closer View & Different Feeling</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="video-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 offset-lg-1">
+                    <div class="video-frame">
+                        <img src="{% static 'assets/images/video-frame.jpg' %}" alt="">
+                        <a href="https://youtube.com" target="_blank"><i class="fa fa-play"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  
+
+    <div class="section best-deal">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="section-heading">
+                        <h6>| Best Deal</h6>
+                        <h2>Find Your Best Deal Right Now!</h2>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="tabs-content">
+                        <div class="row">
+                            
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="appartment" role="tabpanel"
+                                    aria-labelledby="appartment-tab">
+                                    <div class="row">
+                                        <div class="col-lg-3">
+                                            <div class="info-table">
+                                                <ul>
+                                                    <li>Floor number <span>{{ house.floor }}</span></li>
+                                                    <li>Number of rooms <span>{{ house.bedrooms }}</span></li>
+                                                    <li>Parking Available <span>Yes</span></li>
+                                                    <li>Taken<span>{{ taken }}</span></li>
+                                                    {% if not house.taken %}
+                                                        <li>Booked<span>{{ booked }}</span></li>
+                                                    {% endif %}
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <img src="{{ image.image.url }}" alt="">
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <h4>Extra Info About Property</h4>
+                                            <p>Sunlight streamed through the expansive windows, casting a warm glow on the polished hardwood floors of the apartment.
+                                            The contrasted beautifully with the crisp white walls in the living
+                                            room..<br><br> The modern kitchen boasted stainless steel appliances and countertops that gleamed like
+                                            moonlight. The apartment wasn't just a place to live, it was a curated sanctuary, a
+                                            reflection of its resident's impeccable taste and love for comfort.
+
+                                            </p>
+                                            <div class="icon-button">
+                                                <a href="#"><i class="fa fa-calendar"></i> Schedule
+                                                    a visit</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="properties section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 offset-lg-4">
+                    <div class="section-heading text-center">
+                        <h6>| Properties</h6>
+                        <h2>We Provide The Best Property You Like</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="item">
+                        <a href="#"><img src="{% static 'assets/images/property-01.jpg' %}" alt=""></a>
+                        <span class="category">Luxury Villa</span>
+                        <h6>$2.264.000</h6>
+                        <h4><a href="#">18 New Street Miami, OR 97219</a></h4>
+                        <ul>
+                            <li>Bedrooms: <span>8</span></li>
+                            <li>Bathrooms: <span>8</span></li>
+                            <li>Area: <span>545m2</span></li>
+                            <li>Floor: <span>3</span></li>
+                            <li>Parking: <span>6 spots</span></li>
+                        </ul>
+                        <div class="main-button">
+                            <a href="#">Schedule a visit</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="item">
+                        <a href="#"><img src="{% static 'assets/images/property-02.jpg' %}" alt=""></a>
+                        <span class="category">Luxury Villa</span>
+                        <h6>$1.180.000</h6>
+                        <h4><a href="#">54 Mid Street Florida, OR 27001</a></h4>
+                        <ul>
+                            <li>Bedrooms: <span>6</span></li>
+                            <li>Bathrooms: <span>5</span></li>
+                            <li>Area: <span>450m2</span></li>
+                            <li>Floor: <span>3</span></li>
+                            <li>Parking: <span>8 spots</span></li>
+                        </ul>
+                        <div class="main-button">
+                            <a href="#">Schedule a visit</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="item">
+                        <a href="#"><img src="{% static 'assets/images/property-03.jpg' %}" alt=""></a>
+                        <span class="category">Luxury Villa</span>
+                        <h6>$1.460.000</h6>
+                        <h4><a href="#">26 Old Street Miami, OR 38540</a></h4>
+                        <ul>
+                            <li>Bedrooms: <span>5</span></li>
+                            <li>Bathrooms: <span>4</span></li>
+                            <li>Area: <span>225m2</span></li>
+                            <li>Floor: <span>3</span></li>
+                            <li>Parking: <span>10 spots</span></li>
+                        </ul>
+                        <div class="main-button">
+                            <a href="#">Schedule a visit</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="item">
+                        <a href="#"><img src="{% static 'assets/images/property-04.jpg' %}" alt=""></a>
+                        <span class="category">Apartment</span>
+                        <h6>$584.500</h6>
+                        <h4><a href="#">12 New Street Miami, OR 12650</a></h4>
+                        <ul>
+                            <li>Bedrooms: <span>4</span></li>
+                            <li>Bathrooms: <span>3</span></li>
+                            <li>Area: <span>125m2</span></li>
+                            <li>Floor: <span>25th</span></li>
+                            <li>Parking: <span>2 cars</span></li>
+                        </ul>
+                        <div class="main-button">
+                            <a href="#">Schedule a visit</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="item">
+                        <a href="#"><img src="{% static 'assets/images/property-05.jpg' %}" alt=""></a>
+                        <span class="category">Penthouse</span>
+                        <h6>$925.600</h6>
+                        <h4><a href="#">34 Beach Street Miami, OR 42680</a></h4>
+                        <ul>
+                            <li>Bedrooms: <span>4</span></li>
+                            <li>Bathrooms: <span>4</span></li>
+                            <li>Area: <span>180m2</span></li>
+                            <li>Floor: <span>38th</span></li>
+                            <li>Parking: <span>2 cars</span></li>
+                        </ul>
+                        <div class="main-button">
+                            <a href="#">Schedule a visit</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="item">
+                        <a href="#"><img src="{% static 'assets/images/property-06.jpg' %}" alt=""></a>
+                        <span class="category">Modern Condo</span>
+                        <h6>$450.000</h6>
+                        <h4><a href="#">22 New Street Portland, OR 16540</a></h4>
+                        <ul>
+                            <li>Bedrooms: <span>1</span></li>
+                            <li>Bathrooms: <span>1</span></li>
+                            <li>Area: <span>165m2</span></li>
+                            <li>Floor: <span>2nd</span></li>
+                            <li>Parking: <span>3 cars</span></li>
+                        </ul>
+                        <div class="main-button">
+                            <a href="#">Schedule a visit</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact section">
+        <div class="overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 offset-lg-4">
+                    <div class="section-heading text-center">
+                        <h6>| Contact Us</h6>
+                        <h2>Get In Touch With Our Agents</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="contact-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7">
+                    <div id="map">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d529.7804460103541!2d32.564622780045575!3d0.32253027882970947!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sug!4v1714479499867!5m2!1sen!2sug"
+                            width="100%" height="500px" frameborder="0"
+                            style="border:0; border-radius: 10px; box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);"
+                            allowfullscreen=""></iframe>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="item phone">
+                                <img src="{% static 'assets/images/phone-icon.png' %}" alt="" style="max-width: 52px;">
+                                <h6>+256-759-534787<br><span>Phone Number</span></h6>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="item email">
+                                <img src="{% static 'assets/images/email-icon.png' %}" alt="" style="max-width: 52px;">
+                                <h6 style="text-wrap: wrap;word-wrap: break-word;">evergrace.info@gmail.com<br><span>Business Email</span></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5" id="visit">
+                    <form id="contact-form" action="" method="post">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <fieldset>
+                                    <label for="name">Full Name</label>
+                                    <input type="name" name="name" id="name" placeholder="Your Name..."
+                                        autocomplete="on" required>
+                                </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                                <fieldset>
+                                    <label for="email">Email Address</label>
+                                    <input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*"
+                                        placeholder="Your E-mail..." required="">
+                                </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                                <fieldset>
+                                    <label for="subject">Subject</label>
+                                    <input type="subject" name="subject" id="subject" placeholder="Subject..."
+                                        autocomplete="on">
+                                </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                                <fieldset>
+                                    <label for="message">Message</label>
+                                    <textarea name="message" id="message" placeholder="Your Message"></textarea>
+                                </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                                <fieldset>
+                                    <button type="submit" id="form-submit" class="orange-button">Send Message</button>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Scripts -->
+    <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/js/isotope.min.js' %}"></script>
+    <script src="{% static 'assets/js/owl-carousel.js' %}"></script>
+    <script src="{% static 'assets/js/counter.js' %}"></script>
+    <script src="{% static 'assets/js/custom.js' %}"></script>
+
+{% endblock %}

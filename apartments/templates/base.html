@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>{{ title }}</title>
+
+</head>
+
+<body>
+
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="index.html" class="logo">
+                            <img style="padding-top:20px;height:70px;width:70px;object-fit: contain;" src="{% static 'images/logo.jpg' %}" alt="">
+                        </a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                            <li><a href="{% url 'home' %}" {% if page == 'home' %}class="active"{% endif %}>Home</a></li>
+                            <li><a href="{% url 'properties' %}" {% if page == 'Properties' %}class="active"{% endif %}>Properties</a></li>
+                            <li><a href="{% url 'details' %}" {% if page == 'details' %}class="active"{% endif %}>Property Details</a></li>
+                            <li><a href="{% url 'contacts' %}" {% if page == 'contacts' %}class="active"{% endif %}>Contact Us</a></li>
+                            <li><a href="#visit" {% if page == 'visit' %}class="active"{% endif %}><i class="fa fa-calendar"></i> Schedule a visit</a></li>
+                        </ul>
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+
+    {% block content %}
+    {% endblock %}
+
+    <footer>
+        <div class="container">
+            <div class="col-lg-8">
+                <p>Copyright © 2024 EVERGRACE. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+</html>
