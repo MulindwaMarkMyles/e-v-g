@@ -10,7 +10,6 @@ class House(models.Model):
     taken = models.BooleanField(default=False)
     type = models.CharField(max_length=100, null=True, blank=True)
     tag = models.SmallIntegerField(null=True, blank=True)
-    description = models.TextField(null=True, blank=False)
     
     def __str__(self):
         return f"House of id={self.id} and costs {self.price}."
