@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from .models import *
 from random import randint
 from .forms import *
@@ -84,5 +84,26 @@ def upload(request):
         
     }
     return render(request, "upload.html", context)
-        
 
+def site_map(request):
+    context = {
+        "title": "EVERGRACE APARTMENTS"
+    }
+    return render(request, "map.html", context)
+
+def schedule(request):
+    if request.method == 'POST':
+        form = ScheduleMeeting(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+        else:
+            form.add_error(None, "Please check the details you entered.")
+    else:
+        form = ScheduleMeeting()
+        
+    context = {
+        "title": "EVERGRACE APARTMENTS",
+        "form":form
+    }
+    return render(request, "schedule.html", context)

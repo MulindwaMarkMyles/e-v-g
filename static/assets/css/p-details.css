@@ -13,11 +13,6 @@
     transition:all linear 0.2s;
     max-height: 560px;
 }
-@media (max-width:700px) {
-    .p-details-ev .images img {
-        max-height: 300px;
-    }
-}
 .p-details-ev .btn-sliders {
     position:absolute;
     bottom:20px;
@@ -34,6 +29,14 @@
     margin:3px 10px;
     cursor: pointer;
     transition: all ease-in 0.15s;
+}
+@media (max-width:700px) {
+    .p-details-ev .images img {
+        max-height: 300px;
+    }
+    .p-details-ev .btn-sliders span {
+        margin:3px 3px;        
+    }
 }
 .p-details-ev .btn-sliders span:hover {
     background:white;
@@ -60,6 +63,10 @@
 .p-details-ev .left:active {
     margin-left:2px;
 }
+.p-details-notes .properties{
+    display: flex;
+    justify-content: space-between;
+}
 .p-details-notes ul {
-    font-size:20px;
+    font-size:15px;
 }

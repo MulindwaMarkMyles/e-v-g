@@ -9,14 +9,7 @@
 
 
     <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/p-details.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/css/owl.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}">
-    <!-- <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/> -->
-    <link rel="stylesheet" href="{% static 'assets/css/swiper-bundle.min.css' %}">
-
 
   <!-- ***** Preloader Start ***** -->
   <div id="js-preloader" class="js-preloader">
@@ -67,84 +60,69 @@
           <div class="main-content p-details-notes">
               <span class="category">{{ house.type }}</span>
               <h4>UGX {{ house.price }}</h4>
-              <ul>
-                  <li>Bedrooms: <span>{{ house.bedrooms }}</span></li>
-                  {% if house.taken %}
-                  <li>Taken: <span>Yes</span></li>
-                  {% else %}
-                  <li>Taken: <span>No</span></li>
-                  {% if house.booked %}
-                  <li>Booked: <span>Yes</span></li>
-                  {% else %}
-                  <li>Booked: <span>No</span></li>
-                  {% endif %}
-                  {% endif %}
-                  <li>Floor: <span>{{ house.floor }}</span></li>
-              </ul>
               <hr>
-                <p>{{ house.description }}</p>
+              <div class="properties">
+                  <ul>
+                      <li><i class="fas  fa-house"></i> Bedrooms: <span>{{ house.bedrooms }}</span></li>
+                      {% if house.taken %}
+                      <li><i class="fa fa-check-double"></i>Taken: <span>Yes</span></li>
+                      {% else %}
+                      <li><i class="fa fa-check-double"></i>Taken: <span>No</span></li>
+                      {% if house.booked %}
+                      <li><i class="fa fa-check"></i>Booked: <span>Yes</span></li>
+                      {% else %}
+                      <li><i class="fa fa-check"></i>Booked: <span>No</span></li>
+                      {% endif %}
+                      {% endif %}
+                      <li><i class="fa fa-list-ol"></i>Floor: <span>{{ house.floor }}</span></li>
+                  </ul>
+                  <ul>
+                        <li><i class="fa fa-wifi"></i> Wifi</li>
+                        <li><i class="fa fa-square-parking"></i> Parking</li>
+                        <li><i class="fa fa-shield"></i> Security</li>
+                        <li><i class="fa fa-location-dot"></i> Located in Town</li>
+                        <li><i class="fa fa-seedling"></i> Environment friendly</li>
+                        <li><i class="fa fa-house-medical"></i> Health Conscious</li>
+                  </ul>
+              </div>
               <hr>
-            <!-- <p>Get <strong>the best villa agency</strong> HTML CSS Bootstrap Template for your company website. TemplateMo provides you the <a href="https://www.google.com/search?q=best+free+css+templates" target="_blank">best free CSS templates</a> in the world. Please tell your friends about it. Thank you. Cloud bread kogi bitters pitchfork shoreditch tumblr yr succulents single-origin coffee schlitz enamel pin you probably haven't heard of them ugh hella.
-            
-            <br><br>When you look for free CSS templates, you can simply type TemplateMo in any search engine website. In addition, you can type TemplateMo Digital Marketing, TemplateMo Corporate Layouts, etc. Master cleanse +1 intelligentsia swag post-ironic, slow-carb chambray knausgaard PBR&B DSA poutine neutra cardigan hoodie pop-up.</p> -->
+                <p>               
+                - <strong>Exterior</strong>: The apartment house boasts a sleek and modern design with a fully vanished exterior finish, giving it a
+                clean and sophisticated appearance.<br>
+                - <strong>Balcony</strong>: Some apartment units feature a private balcony, offering residents a space to unwind and enjoy the
+                outdoors.<br>
+                - <strong>Windows</strong>: Large windows adorn the building, allowing natural light to flood the living spaces and providing
+                beautiful views of the surroundings.<br>
+                - <strong>WiFi</strong>: The apartment house is equipped with high-speed WiFi connectivity, ensuring residents can stay connected for
+                work or leisure activities.<br>
+                - <strong>Parking</strong>: Residents have access to convenient parking facilities, which may include covered parking spaces or a
+                secure parking garage.<br>
+                - <strong>Location</strong>: Ideally located in a vibrant neighborhood, the apartment house provides easy access to local amenities,
+                transportation options, and entertainment venues.<br>
+                - <strong>Interior</strong>: Inside, the apartments feature modern finishes, spacious layouts, and high-quality appliances for a
+                comfortable living experience.<br>
+                - <strong>Security</strong>: The building offers secure access control systems, surveillance cameras, and possibly on-site staff to
+                ensure the safety and well-being of residents.
+                <br>
+                <br>
+                <small>*Note: Some houses may or may not have some of the above.</small></p>
+              <hr>
           </div> 
-          <!-- <div class="accordion" id="accordionExample">
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingOne">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                  Best useful links ?
-                </button>
-              </h2>
-              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                  Dolor <strong>almesit amet</strong>, consectetur adipiscing elit, sed doesn't eiusmod tempor kinfolk tonx seitan crucifix 3 wolf moon bicycle rights keffiyeh snackwave wolf same vice, chillwave vexillologist incididunt ut labore consectetur <code>adipiscing</code> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </div>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingTwo">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                  How does this work ?
-                </button>
-              </h2>
-              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                  Dolor <strong>almesit amet</strong>, consectetur adipiscing elit, sed doesn't eiusmod tempor kinfolk tonx seitan crucifix 3 wolf moon bicycle rights keffiyeh snackwave wolf same vice, chillwave vexillologist incididunt ut labore consectetur <code>adipiscing</code> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </div>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingThree">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                  Why is Villa the best ?
-                </button>
-              </h2>
-              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                  Dolor <strong>almesit amet</strong>, consectetur adipiscing elit, sed doesn't eiusmod tempor kinfolk tonx seitan crucifix 3 wolf moon bicycle rights keffiyeh snackwave wolf same vice, chillwave vexillologist incididunt ut labore consectetur <code>adipiscing</code> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </div>
-              </div>
-            </div>
-          </div> -->
         </div>
         <div class="col-lg-4">
           <div class="info-table">
             <ul>
-              <li>
-                <img src="{% static 'assets/images/info-icon-01.png' %}" alt="" style="max-width: 52px;">
-                <h4>450 m2<br><span>Total Flat Space</span></h4>
-              </li>
               <li>
                 <img src="{% static 'assets/images/info-icon-02.png' %}" alt="" style="max-width: 52px;">
                 <h4>Contract<br><span>Contract Ready</span></h4>
               </li>
               <li>
                 <img src="{% static 'assets/images/info-icon-03.png' %}" alt="" style="max-width: 52px;">
-                <h4>Payment<br><span>Payment Process</span></h4>
+                <h4>Payment<br><span>On Site</span></h4>
               </li>
               <li>
                 <img src="{% static 'assets/images/info-icon-04.png' %}" alt="" style="max-width: 52px;">
-                <h4>Safety<br><span>24/7 Under Control</span></h4>
+                <h4>Safety<br><span>24/7 Control</span></h4>
               </li>
             </ul>
           </div>
@@ -153,114 +131,7 @@
     </div>
   </div>
 
-  <div class="section best-deal">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-4">
-          <div class="section-heading">
-            <h6>| Best Deal</h6>
-            <h2>Find Your Best Deal Right Now!</h2>
-          </div>
-        </div>
-        <div class="col-lg-12">
-          <div class="tabs-content">
-            <div class="row">
-              <div class="nav-wrapper ">
-                <ul class="nav nav-tabs" role="tablist">
-                  <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="appartment-tab" data-bs-toggle="tab" data-bs-target="#appartment" type="button" role="tab" aria-controls="appartment" aria-selected="true">Appartment</button>
-                  </li>
-                  <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="villa-tab" data-bs-toggle="tab" data-bs-target="#villa" type="button" role="tab" aria-controls="villa" aria-selected="false">Villa House</button>
-                  </li>
-                  <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="penthouse-tab" data-bs-toggle="tab" data-bs-target="#penthouse" type="button" role="tab" aria-controls="penthouse" aria-selected="false">Penthouse</button>
-                  </li>
-                </ul>
-              </div>              
-              <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active" id="appartment" role="tabpanel" aria-labelledby="appartment-tab">
-                  <div class="row">
-                    <div class="col-lg-3">
-                      <div class="info-table">
-                        <ul>
-                          <li>Total Flat Space <span>540 m2</span></li>
-                          <li>Floor number <span>3</span></li>
-                          <li>Number of rooms <span>8</span></li>
-                          <li>Parking Available <span>Yes</span></li>
-                          <li>Payment Process <span>Bank</span></li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="col-lg-6">
-                      <img src="{% static 'assets/images/deal-01.jpg' %}" alt="">
-                    </div>
-                    <div class="col-lg-3">
-                      <h4>All Info About Apartment</h4>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, do eiusmod tempor pack incididunt ut labore et dolore magna aliqua quised ipsum suspendisse. <br><br>Swag fanny pack lyft blog twee. JOMO ethical copper mug, succulents typewriter shaman DIY kitsch twee taiyaki fixie hella venmo after messenger poutine next level humblebrag swag franzen.</p>
-                      <div class="icon-button">
-                        <a href="#"><i class="fa fa-calendar"></i> Schedule a visit</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="tab-pane fade" id="villa" role="tabpanel" aria-labelledby="villa-tab">
-                  <div class="row">
-                    <div class="col-lg-3">
-                      <div class="info-table">
-                        <ul>
-                          <li>Total Flat Space <span>250 m2</span></li>
-                          <li>Floor number <span>26th</span></li>
-                          <li>Number of rooms <span>5</span></li>
-                          <li>Parking Available <span>Yes</span></li>
-                          <li>Payment Process <span>Bank</span></li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="col-lg-6">
-                      <img src="{% static 'assets/images/deal-02.jpg' %}" alt="">
-                    </div>
-                    <div class="col-lg-3">
-                      <h4>Detail Info About New Villa</h4>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, do eiusmod tempor pack incididunt ut labore et dolore magna aliqua quised ipsum suspendisse. <br><br>Swag fanny pack lyft blog twee. JOMO ethical copper mug, succulents typewriter shaman DIY kitsch twee taiyaki fixie hella venmo after messenger poutine next level humblebrag swag franzen.</p>
-                      <div class="icon-button">
-                        <a href="#"><i class="fa fa-calendar"></i> Schedule a visit</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="tab-pane fade" id="penthouse" role="tabpanel" aria-labelledby="penthouse-tab">
-                  <div class="row">
-                    <div class="col-lg-3">
-                      <div class="info-table">
-                        <ul>
-                          <li>Total Flat Space <span>320 m2</span></li>
-                          <li>Floor number <span>34th</span></li>
-                          <li>Number of rooms <span>6</span></li>
-                          <li>Parking Available <span>Yes</span></li>
-                          <li>Payment Process <span>Bank</span></li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="col-lg-6">
-                      <img src="{% static 'assets/images/deal-03.jpg' %}" alt="">
-                    </div>
-                    <div class="col-lg-3">
-                      <h4>Extra Info About Penthouse</h4>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, do eiusmod tempor pack incididunt ut Kinfolk tonx seitan crucifix 3 wolf moon bicycle rights keffiyeh snackwave wolf same vice, chillwave vexillologistlabore et dolore magna aliqua quised ipsum suspendisse. <br><br>Swag fanny pack lyft blog twee. JOMO ethical copper mug, succulents typewriter shaman DIY kitsch twee taiyaki fixie hella venmo after messenger poutine next level humblebrag swag franzen.</p>
-                      <div class="icon-button">
-                        <a href="#"><i class="fa fa-calendar"></i> Schedule a visit</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+
 
 
   <!-- Scripts -->
@@ -279,7 +150,6 @@
     for (j = 0; j < btns.length; j++){
         btns[j].addEventListener("click", (e) => {
             var btn_index = e.target.attributes.count.value;
-            console.log(btn_index)
             btn_slide(Number(btn_index) + 1);
         })
     }
@@ -290,7 +160,6 @@
         var i;
         const img = document.getElementsByClassName("image");
         const sliders = document.querySelectorAll(".btn-sliders span");
-        console.log(e,'sh')
         if (e > img.length){index = 1}
         if (e < 1){index = img.length}
         for (i = 0; i < img.length; i++){

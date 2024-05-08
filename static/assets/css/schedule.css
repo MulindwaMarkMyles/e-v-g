@@ -1,0 +1,47 @@
+.meeting-details {
+    width:100%;
+    height:100%;
+    padding:20px;
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+.meeting-details .input-fields {
+    display: flex;
+    width:100%;
+    flex-direction: column;
+    gap:15px;
+    padding:0 0px;
+}
+.meeting-details .input-fields input {
+    border:none;
+    background-color: rgba(128, 128, 128, 0.1);
+    border-radius: 7px;
+    padding:7px 15px;
+    font-size:17px;
+    outline:none;
+}
+.meeting-details .input-fields textarea {
+    border: none;
+    background-color: rgba(128, 128, 128, 0.1);
+    border-radius: 7px;
+    padding: 7px 15px;
+    font-size: 17px;
+    outline: none;
+}
+.meeting-details button {
+    border:1px solid black;
+    border-radius:3px;
+    transition:all linear 0.2s;
+    background-color: white;
+    color:black;
+    padding:10px;
+    margin-top:20px;
+}
+.meeting-details button:hover {
+    background-color: #407076;
+    border-color: #407076;
+    color:white;
+}

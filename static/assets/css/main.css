@@ -463,36 +463,6 @@ Header Style
   letter-spacing: .25px;
 }
 
-.header-area .main-nav .nav li:last-child a {
-  background-color: #1e1e1e;
-  color: #fff;
-  font-size: 14px;
-  font-weight: 400;
-  text-transform: none;
-  border-radius: 20px;
-  padding-left: 0px;
-}
-
-.header-area .main-nav .nav li:last-child a i {
-  background-color: #407076;
-  display: inline-block;
-  width: 40px;
-  height: 40px;
-  text-align: center;
-  line-height: 40px;
-  margin-right: 10px;
-  border-radius: 50%;
-  margin-left: -1px;
-}
-
-.header-area .main-nav .nav li:last-child:hover a {
-  background-color: #1e1e1e;
-}
-
-.header-area .main-nav .nav li:last-child:hover a i {
-  color: #fff;
-}
-
 .header-area .main-nav .nav li:hover a {
   color: #407076;
 }
@@ -679,11 +649,7 @@ Header Style
   .header-area.header-sticky .nav li.search-icon a {
     width: 100%;
   }
-  .header-area .nav li:last-child a {
-    background-color: transparent !important;
-    font-weight: 300 !important;
-    text-transform: capitalize !important;
-  }
+
   .header-area {
     padding: 0px 15px;
     height: 80px;
@@ -1707,9 +1673,6 @@ body {
   .properties ul.properties-filter li {
     margin: 5px;
   }
-  .header-area .main-nav .nav li:last-child {
-    display: none;
-  }
 }
 
 @media (max-width: 992px) {
@@ -1810,4 +1773,7 @@ body {
   .contact-page .section-heading {
     margin-right: 100px;
   }
+}
+li i {
+    margin:0 7px;
 }

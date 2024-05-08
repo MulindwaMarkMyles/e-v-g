@@ -3,8 +3,13 @@
   background-color:#26272b;
   padding:45px 0 20px;
   font-size:15px;
-  line-height:24px;
   color:#737373;
+}
+.site-footer h6 {
+    margin-bottom:10px;
+}
+.site-footer h7 {
+    color:white;
 }
 .site-footer hr
 {
@@ -70,7 +75,8 @@
 }
 .copyright-text
 {
-  margin:0
+  margin:0;
+  line-height: 20px;
 }
 @media (max-width:991px)
 {
