@@ -1482,10 +1482,7 @@ Single Page Style
 
 .single-property .main-content h4 {
   font-size: 25px;
-  margin-top: 25px;
-  margin-bottom: 40px;
-  padding-bottom: 40px;
-  border-bottom: 1px solid #eee;
+  padding:10px 0px;
 }
 
 .single-property .main-content span.category {

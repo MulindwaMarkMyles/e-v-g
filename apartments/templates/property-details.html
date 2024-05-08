@@ -11,9 +11,11 @@
     <!-- Additional CSS Files -->
     <link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/p-details.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/owl.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}">
-    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+    <!-- <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/> -->
+    <link rel="stylesheet" href="{% static 'assets/css/swiper-bundle.min.css' %}">
 
 
   <!-- ***** Preloader Start ***** -->
@@ -44,17 +46,49 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8">
-          <div class="main-image">
-            <img src="{% static 'assets/images/single-property.jpg' %}" alt="">
+          <div class="main-image p-details-ev">
+            <div class="images ">
+                {%for image in images %}
+                    <img src="{{ image.image.url }}" alt="" class="image">
+                {% endfor %}
+            </div>
+            <div onclick="side_slide(-1)" class="slide left">
+                <span class="fas fa-angle-left"></span>
+            </div>
+            <div onclick="side_slide(1)" class="slide right">
+                <span class="fas fa-angle-right"></span>
+            </div>
+            <div class="btn-sliders">
+                {% for count in image_count %}
+                    <span class="btn-slider" count="{{ count }}"></span>
+                {% endfor %}
+            </div>
           </div>
-          <div class="main-content">
-            <span class="category">Apparment</span>
-            <h4>24 New Street Miami, OR 24560</h4>
-            <p>Get <strong>the best villa agency</strong> HTML CSS Bootstrap Template for your company website. TemplateMo provides you the <a href="https://www.google.com/search?q=best+free+css+templates" target="_blank">best free CSS templates</a> in the world. Please tell your friends about it. Thank you. Cloud bread kogi bitters pitchfork shoreditch tumblr yr succulents single-origin coffee schlitz enamel pin you probably haven't heard of them ugh hella.
+          <div class="main-content p-details-notes">
+              <span class="category">{{ house.type }}</span>
+              <h4>UGX {{ house.price }}</h4>
+              <ul>
+                  <li>Bedrooms: <span>{{ house.bedrooms }}</span></li>
+                  {% if house.taken %}
+                  <li>Taken: <span>Yes</span></li>
+                  {% else %}
+                  <li>Taken: <span>No</span></li>
+                  {% if house.booked %}
+                  <li>Booked: <span>Yes</span></li>
+                  {% else %}
+                  <li>Booked: <span>No</span></li>
+                  {% endif %}
+                  {% endif %}
+                  <li>Floor: <span>{{ house.floor }}</span></li>
+              </ul>
+              <hr>
+                <p>{{ house.description }}</p>
+              <hr>
+            <!-- <p>Get <strong>the best villa agency</strong> HTML CSS Bootstrap Template for your company website. TemplateMo provides you the <a href="https://www.google.com/search?q=best+free+css+templates" target="_blank">best free CSS templates</a> in the world. Please tell your friends about it. Thank you. Cloud bread kogi bitters pitchfork shoreditch tumblr yr succulents single-origin coffee schlitz enamel pin you probably haven't heard of them ugh hella.
             
-            <br><br>When you look for free CSS templates, you can simply type TemplateMo in any search engine website. In addition, you can type TemplateMo Digital Marketing, TemplateMo Corporate Layouts, etc. Master cleanse +1 intelligentsia swag post-ironic, slow-carb chambray knausgaard PBR&B DSA poutine neutra cardigan hoodie pop-up.</p>
+            <br><br>When you look for free CSS templates, you can simply type TemplateMo in any search engine website. In addition, you can type TemplateMo Digital Marketing, TemplateMo Corporate Layouts, etc. Master cleanse +1 intelligentsia swag post-ironic, slow-carb chambray knausgaard PBR&B DSA poutine neutra cardigan hoodie pop-up.</p> -->
           </div> 
-          <div class="accordion" id="accordionExample">
+          <!-- <div class="accordion" id="accordionExample">
             <div class="accordion-item">
               <h2 class="accordion-header" id="headingOne">
                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -91,7 +125,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
         <div class="col-lg-4">
           <div class="info-table">
@@ -231,11 +265,43 @@
 
   <!-- Scripts -->
   <!-- Bootstrap core JavaScript -->
-  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
-  <script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
-  <script src="{% static 'assets/js/isotope.min.js' %}"></script>
-  <script src="{% static 'assets/js/owl-carousel.js' %}"></script>
-  <script src="{% static 'assets/js/counter.js' %}"></script>
-  <script src="{% static 'assets/js/custom.js' %}"></script>
+<script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'assets/js/isotope.min.js' %}"></script>
+<script src="{% static 'assets/js/owl-carousel.js' %}"></script>
+<script src="{% static 'assets/js/counter.js' %}"></script>
+<script src="{% static 'assets/js/custom.js' %}"></script>
+<script>
+    var index = 1;
+    showImg(index);
+    var btns = document.getElementsByClassName('btn-slider')
+    var j;
+    for (j = 0; j < btns.length; j++){
+        btns[j].addEventListener("click", (e) => {
+            var btn_index = e.target.attributes.count.value;
+            console.log(btn_index)
+            btn_slide(Number(btn_index) + 1);
+        })
+    }
+    function btn_slide(e){showImg(index = e);}
+    function side_slide(e){showImg(index += e);}
+    
+    function showImg(e){
+        var i;
+        const img = document.getElementsByClassName("image");
+        const sliders = document.querySelectorAll(".btn-sliders span");
+        console.log(e,'sh')
+        if (e > img.length){index = 1}
+        if (e < 1){index = img.length}
+        for (i = 0; i < img.length; i++){
+            img[i].style.display = "none";
+        }
+        for (i = 0; i < sliders.length; i++){
+            sliders[i].style.background = "rgba(255,255,255,0.3)";
+        }
+        img[index-1].style.display = "block";
+        sliders[index-1].style.background = "white";
+    }
+</script>
 
 {% endblock %}

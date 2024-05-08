@@ -1,18 +1,18 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
         
-    <!-- Bootstrap core CSS -->
-    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/css/owl.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}">
-    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+        <!-- Bootstrap core CSS -->
+        <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+        
+        <!-- Additional CSS Files -->
+        <link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/css/owl.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}">
+        <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 
     <!-- ***** Preloader Start ***** -->
     <div id="js-preloader" class="js-preloader">
@@ -45,23 +45,23 @@
                     <a class="is_active" href="#!" data-filter="*">Show All</a>
                 </li>
                 <li>
-                    <a href="#!" data-filter=".1">Apartment</a>
+                    <a href="#!" data-filter=".1">ONE BEDROOM</a>
                 </li>
                 <li>
-                    <a href="#!" data-filter=".2">Villa House</a>
+                    <a href="#!" data-filter=".2">TWO BEDROOMS</a>
                 </li>
                 <li>
-                    <a href="#!" data-filter=".3">Penthouse</a>
+                    <a href="#!" data-filter=".3">THREE BEDROOMS</a>
                 </li>
             </ul>
             <div class="row properties-box">
                 {% for house,image in houses %}
                 <div class="col-lg-4 col-md-6 align-self-center mb-30 properties-items col-md-6 {{ house.tag }}">
                     <div class="item">
-                        <a href="property-details.html"><img src="{{ image.image.url }}" alt=""></a>
+                        <a href="{% url 'details' house.id %}"><img src="{{ image.image.url }}" alt=""></a>
                         <span class="category">{{ house.type }}</span>
-                        <h6>{{ house.price }}</h6>
-                        <h4><a href="property-details.html">Like it?</a></h4>
+                        <h6>UGX {{ house.price }}</h6>
+                        <h4><a href=""></a></h4>
                         <ul>
                             <li>Bedrooms: <span>{{ house.bedrooms }}</span></li>
                             {% if house.taken %}
@@ -77,6 +77,7 @@
                         </ul>
                         <div class="main-button">
                             <a href="property-details.html">Schedule a visit</a>
+                            <a href="{% url 'details' house.id %}">View</a>
                         </div>
                     </div>
                 </div>

@@ -1,0 +1,65 @@
+.p-details-ev {
+    position: relative;
+}
+.p-details-ev .images{
+    height:100%;
+    width:100%;
+    /* overflow: hidden; */
+}
+.p-details-ev .images img {
+    height: 100%;
+    width:100%;
+    object-fit: cover;
+    transition:all linear 0.2s;
+    max-height: 560px;
+}
+@media (max-width:700px) {
+    .p-details-ev .images img {
+        max-height: 300px;
+    }
+}
+.p-details-ev .btn-sliders {
+    position:absolute;
+    bottom:20px;
+    left:50%;
+    transform:translateX(-50%);
+    display: flex;
+}
+.p-details-ev .btn-sliders span {
+    height:7px;
+    border-radius: 3px;
+    width:7px;
+    display: block;
+    border:1px solid white;
+    margin:3px 10px;
+    cursor: pointer;
+    transition: all ease-in 0.15s;
+}
+.p-details-ev .btn-sliders span:hover {
+    background:white;
+}
+.p-details-ev .slide {
+    position: absolute;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:50px;
+    font-weight: 600;
+    z-index:10;
+    color:white;
+    cursor: pointer;
+    margin-left:10px;
+    transition: all linear 0.1s;
+}
+.p-details-ev .right {
+    right:0;
+    margin-right: 10px;
+}
+.p-details-ev .right:active {
+    margin-right:2px;
+}
+.p-details-ev .left:active {
+    margin-left:2px;
+}
+.p-details-notes ul {
+    font-size:20px;
+}

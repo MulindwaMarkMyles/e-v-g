@@ -20,6 +20,7 @@ def home(request):
     
     context = {
         "title":"EVERGRACE APARTMENTS",
+        "page":"home",
         "house":random_house,
         "booked":booked,
         "taken":taken,
@@ -39,20 +40,28 @@ def properties(request):
     
     context = {
         "title":"EVERGRACE APARTMENTS",
-        "houses":houses_and_images	
+        "houses":houses_and_images,
+        "page":"Properties"
     }
     
     return render(request, "properties.html", context)
 
-def details(request):
+def details(request, id):
+    house = House.objects.filter(id=id).first()
+    images = house.image_set.all()
     context = {
-        "title":"EVERGRACE APARTMENTS"
+        "title":"EVERGRACE APARTMENTS",
+        "page":"details",
+        "house":house,
+        "images":images,
+        "image_count": range(images.count())
     }
     return render(request, "property-details.html", context)
 
 def contacts(request):
     context = {
-        "title":"EVERGRACE APARTMENTS"
+        "title":"EVERGRACE APARTMENTS",
+        "page":"contacts"
     }
     return render(request, "contact.html", context)
 
