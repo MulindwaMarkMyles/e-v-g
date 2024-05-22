@@ -41,31 +41,43 @@
     <!-- ***** Preloader End ***** -->
 
     <div class="main-banner">
-        <div class="owl-carousel owl-banner">
-            <div class="item item-1">
+        <div class="">
+            <div class="item item-banner item-1">
                 <div class="header-text">
                     <span class="category">Makerere, <em>Bukesa</em></span>
                     <h2>Hurry!<br>Get this offer while it lasts</h2>
                 </div>
             </div>
-            <div class="item item-2">
+            <div class="item item-banner item-2">
                 <div class="header-text">
                     <span class="category">Makerere, <em>Bukesa</em></span>
                     <h2>Be Quick!<br>Get the best rental in town</h2>
                 </div>
             </div>
-            <div class="item item-3">
+            <div class="item item-banner item-3">
                 <div class="header-text">
                     <span class="category">Makerere, <em>Bukesa</em></span>
                     <h2>Act Now!<br>Get the highest level house</h2>
                 </div>
             </div>
-            <div class="item item-4">
+            <div class="item item-banner item-4">
                 <div class="header-text">
                     <span class="category">Makerere, <em>Bukesa</em></span>
                     <h2>Hurry!<br>We await you</h2>
                 </div>
             </div>
+        </div>
+        <div onclick="side_slide(-1)" class="slide left">
+            <span class="fas fa-angle-left"></span>
+        </div>
+        <div onclick="side_slide(1)" class="slide right">
+            <span class="fas fa-angle-right"></span>
+        </div>
+        <div class="btn-sliders">
+            <span class="btn-slider" count="1"></span>
+            <span class="btn-slider" count="2"></span>
+            <span class="btn-slider" count="3"></span>
+            <span class="btn-slider" count="4"></span>
         </div>
     </div>
 
@@ -293,7 +305,7 @@
                 <div class="col-lg-7">
                     <div id="map">
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d529.7804460103541!2d32.564622780045575!3d0.32253027882970947!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sug!4v1714479499867!5m2!1sen!2sug"
+                            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d28219.207493399703!2d32.54361583476561!3d0.32176820000000744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMMKwMTknMTguNCJOIDMywrAzMyc1MS4yIkU!5e1!3m2!1sen!2sug!4v1716373883348!5m2!1sen!2sug"
                             width="100%" height="500px" frameborder="0"
                             style="border:0; border-radius: 10px; box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);"
                             allowfullscreen=""></iframe>
@@ -364,5 +376,37 @@
     <script src="{% static 'assets/js/owl-carousel.js' %}"></script>
     <script src="{% static 'assets/js/counter.js' %}"></script>
     <script src="{% static 'assets/js/custom.js' %}"></script>
+    <script>
+        var index = 1;
+        showImg(index);
+        var btns = document.getElementsByClassName('btn-slider')
+        var j;
+        for (j = 0; j < btns.length; j++) {
+            btns[j].addEventListener("click", (e) => {
+                var btn_index = e.target.attributes.count.value;
+                btn_slide(Number(btn_index) + 1);
+            })
+        }
+        function btn_slide(e) { showImg(index = e); }
+        function side_slide(e) { showImg(index += e); }
+
+        function showImg(e) {
+            var i;
+            const img = document.getElementsByClassName("item-banner");
+            const sliders = document.querySelectorAll(".btn-sliders span");
+            if (e > img.length) { index = 1 }
+            if (e < 1) { index = img.length }
+            console.log(index)
+            console.log("count:" + img.length)
+            for (i = 0; i < img.length; i++) {
+                img[i].style.display = "none";
+            }
+            for (i = 0; i < sliders.length; i++) {
+                sliders[i].style.background = "rgba(255,255,255,0.3)";
+            }
+            img[index - 1].style.display = "block";
+            sliders[index - 1].style.background = "white";
+        }
+    </script>
 
 {% endblock %}

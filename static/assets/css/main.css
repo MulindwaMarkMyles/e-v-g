@@ -337,12 +337,8 @@ Header Style
 .sub-header ul.social-links li a {
   display: inline-block;
   width: 30px;
-  height: 30px;
-  background-color: #cdcdcd;
-  border-radius: 50%;
-  text-align: center;
-  line-height: 30px;
-  color: #fff;
+  he
+  lor: #fff;
   font-size: 14px;
   transition: all .3s;
 }
