@@ -8,5 +8,6 @@ urlpatterns = [
     path("contact-us/", contacts, name="contacts"),
     path("upload/", upload, name="upload"),
     path("site-map/", site_map, name="sitemap"),
-    path("meeting/", schedule, name="schedule-meeting")
+    path("meeting/", schedule, name="schedule-meeting"),
+    path("administrator/evergrace/e", admin, name="administrator"),
 ]

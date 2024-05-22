@@ -107,3 +107,6 @@ def schedule(request):
         "form":form
     }
     return render(request, "schedule.html", context)
+    
+def admin(request):
+    return render(request, "admin.html")
