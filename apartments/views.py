@@ -2,6 +2,9 @@ from django.shortcuts import redirect, render
 from .models import *
 from random import randint
 from .forms import *
+from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import authenticate, login
 
 def home(request):
     random_house = House.objects.filter(id=6).first() # make this random after fixing all problems
@@ -108,9 +111,21 @@ def schedule(request):
     }
     return render(request, "schedule.html", context)
     
+@login_required(login_url="/evergrace/admin/login/")
 def admin(request):
-    properties = House.objects.all()
+    houses = House.objects.all()
+    house_and_image = []
+    users = User.objects.all()
+    for house in houses:
+        house_and_image.append((house, house.image_set.all()[randint(0,(len(house.image_set.all()) -1))]))
     context = {
-        "properties": properties
+        "house_and_image": house_and_image,
+        "users": users
     }
     return render(request, "admin.html", context)
+
+def login_u(request):
+    return render(request, "login.html")
+
+def register(request):
+    return render(request, "register.html")

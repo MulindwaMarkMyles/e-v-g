@@ -1,0 +1,73 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Modernize Free</title>
+    <link rel="shortcut icon" type="image/png" href="../assets/images/logos/favicon.png" />
+    <link rel="stylesheet" href="{% static 'admin/assets/css/styles.min.css' %}" />
+</head>
+
+<body>
+    <!--  Body Wrapper -->
+    <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+        data-sidebar-position="fixed" data-header-position="fixed">
+        <div
+            class="position-relative overflow-hidden radial-gradient min-vh-100 d-flex align-items-center justify-content-center">
+            <div class="d-flex align-items-center justify-content-center w-100">
+                <div class="row justify-content-center w-100">
+                    <div class="col-md-8 col-lg-6 col-xxl-3">
+                        <div class="card mb-0">
+                            <div class="card-body">
+                                <a href="./index.html" class="text-nowrap logo-img text-center d-block py-3 w-100">
+                                    <h2>EVERGRACE</h2>
+                                </a>
+                                <p class="text-center">Hospitality, Comfort, Security</p>
+                                <form method="POST">
+                                    {% csrf_token %}
+                                    {% if messages %}
+                                    {% for message in messages %}
+                                    <div class="alert alert-danger" role="alert">
+                                        {{ message }}
+                                    </div>
+                                    {% endfor %}
+                                    {% endif %}
+                                    <div class="mb-3">
+                                        <label for="exampleInputtext1" class="form-label">Name</label>
+                                        <input type="text" class="form-control" id="exampleInputtext1" placeholder="John Doe"
+                                            aria-describedby="textHelp">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="exampleInputEmail1" class="form-label">Email Address</label>
+                                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="johndoe@gmail.com"
+                                            aria-describedby="emailHelp">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="token" class="form-label">Referance Token</label>
+                                        <input type="text" class="form-control" id="token" placeholder="123f-323s-233d-236d-df43-asf2"
+                                            aria-describedby="emailHelp">
+                                    </div>
+                                    <div class="mb-4">
+                                        <label for="exampleInputPassword1" class="form-label">Password</label>
+                                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="********">
+                                    </div>
+                                    <div class="mb-4">
+                                        <label for="exampleInputPassword2" class="form-label">Confirm Password</label>
+                                        <input type="password" class="form-control" id="exampleInputPassword2" placeholder="********">
+                                    </div>
+                                    <input type="submit" value="Sign Up" class="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
