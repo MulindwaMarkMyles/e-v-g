@@ -109,4 +109,8 @@ def schedule(request):
     return render(request, "schedule.html", context)
     
 def admin(request):
-    return render(request, "admin.html")
+    properties = House.objects.all()
+    context = {
+        "properties": properties
+    }
+    return render(request, "admin.html", context)

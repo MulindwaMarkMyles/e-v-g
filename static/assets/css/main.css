@@ -210,108 +210,6 @@ body {
 
 /* 
 ---------------------------------------------
-Pre-loader Style
---------------------------------------------- 
-*/
-
-.js-preloader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0,0,0,0.99);
-  display: -webkit-box;
-  display: flex;
-  -webkit-box-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  justify-content: center;
-  opacity: 1;
-  visibility: visible;
-  z-index: 9999;
-  -webkit-transition: opacity 0.25s ease;
-  transition: opacity 0.25s ease;
-}
-
-.js-preloader.loaded {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-}
-
-@-webkit-keyframes dot {
-  50% {
-      -webkit-transform: translateX(96px);
-      transform: translateX(96px);
-  }
-}
-
-@keyframes dot {
-  50% {
-      -webkit-transform: translateX(96px);
-      transform: translateX(96px);
-  }
-}
-
-@-webkit-keyframes dots {
-  50% {
-      -webkit-transform: translateX(-31px);
-      transform: translateX(-31px);
-  }
-}
-
-@keyframes dots {
-  50% {
-      -webkit-transform: translateX(-31px);
-      transform: translateX(-31px);
-  }
-}
-
-.preloader-inner {
-  position: relative;
-  width: 142px;
-  height: 40px;
-  background: transparent;
-}
-
-.preloader-inner .dot {
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  top: 12px;
-  left: 15px;
-  background: #407076;
-  border-radius: 50%;
-  -webkit-transform: translateX(0);
-  transform: translateX(0);
-  -webkit-animation: dot 2.8s infinite;
-  animation: dot 2.8s infinite;
-}
-
-.preloader-inner .dots {
-  -webkit-transform: translateX(0);
-  transform: translateX(0);
-  margin-top: 12px;
-  margin-left: 31px;
-  -webkit-animation: dots 2.8s infinite;
-  animation: dots 2.8s infinite;
-}
-
-.preloader-inner .dots span {
-  display: block;
-  float: left;
-  width: 16px;
-  height: 16px;
-  margin-left: 16px;
-  background: #407076;
-  border-radius: 50%;
-}
-
-
-
-/* 
----------------------------------------------
 Header Style
 --------------------------------------------- 
 */
@@ -337,7 +235,7 @@ Header Style
 .sub-header ul.social-links li a {
   display: inline-block;
   width: 30px;
-  he
+
   lor: #fff;
   font-size: 14px;
   transition: all .3s;
@@ -728,74 +626,11 @@ Banner Style
   font-weight: 700;
   text-transform: uppercase;
   color: #fff;
+  text-shadow: 0px 0px 50px black;
   line-height: 72px;
   width: 50%;
   margin-bottom: 0px;
 }
-/* 
-.main-banner .owl-dots {
-  position: absolute;
-  bottom: 60px;
-  left: 20%;
-}
-
-.main-banner .owl-dots .owl-dot {
-  width: 10px;
-  height: 10px;
-  background-color: #fff;
-  border-radius: 50%;
-  margin-right: 10px;
-  transition: all .5s;
-}
-
-.main-banner .owl-dots .active {
-  background-color: #407076;
-}
-
-.main-banner .owl-nav {
-  position: absolute;
-  top: 50%;
-  width: 100%;
-  transform: translateY(-50px);
-}
-
-.main-banner .owl-nav .owl-prev i,
-.main-banner .owl-nav .owl-next i {
-  width: 50px;
-  height: 50px;
-  line-height: 50px;
-  font-size: 24px;
-  display: inline-block;
-  color: #fff;
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  opacity: 1;
-  transition: all .3s;
-}
-
-.main-banner .owl-nav .owl-prev i {
-  position: absolute;
-  left: 45px;
-}
-
-.main-banner .owl-nav .owl-next i {
-  position: absolute;
-  right: 45px;
-}
-
-.main-banner .owl-nav .owl-prev i:hover,
-.main-banner .owl-nav .owl-next i:hover {
-  opacity: 1;
-  background-color: rgba(255, 255, 255, 0.5);
-}
- */
-
-
-/* 
----------------------------------------------
-Featured Style
---------------------------------------------- 
-*/
 
 .featured .left-image {
   position: relative;
@@ -1772,4 +1607,70 @@ body {
 }
 li i {
     margin:0 7px;
+}
+
+
+/*
+--------------------------------
+Misc
+--------------------------------
+*/
+
+.slide {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 50px;
+    font-weight: 600;
+    z-index: 10;
+    color: white;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: all linear 0.1s;
+}
+
+.right {
+    right: 0;
+    margin-right: 10px;
+}
+
+.right:active {
+    margin-right: 2px;
+}
+
+.left:active {
+    margin-left: 2px;
+}
+
+.btn-sliders {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+.btn-sliders span {
+    height: 7px;
+    border-radius: 3px;
+    width: 7px;
+    display: block;
+    border: 1px solid white;
+    margin: 3px 10px;
+    cursor: pointer;
+    transition: all ease-in 0.15s;
+}
+
+@media (max-width:700px) {
+    .images img {
+        max-height: 300px;
+    }
+
+    .btn-sliders span {
+        margin: 3px 3px;
+    }
+}
+
+.btn-sliders span:hover {
+    background: white;
 }
