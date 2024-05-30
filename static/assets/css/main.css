@@ -25,7 +25,8 @@ Table of contents
 font & reset css
 --------------------------------------------- 
 */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900");
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+
 /* 
 ---------------------------------------------
 reset
@@ -1673,4 +1674,15 @@ Misc
 
 .btn-sliders span:hover {
     background: white;
+}
+
+/* preloader */
+.preloader-container {
+    position: relative;
+    z-index:10000;
+    background: url(../../preloader/preloader.gif) center no-repeat;
+    background-size: cover;
+    height:100vh;
+    width:100%;
+    transition: all 0.4s ease-in;
 }

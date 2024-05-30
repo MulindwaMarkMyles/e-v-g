@@ -4,7 +4,10 @@ from random import randint
 from .forms import *
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
+import faker
+
+fake = faker.Faker()
 
 def home(request):
     random_house = House.objects.filter(id=6).first() # make this random after fixing all problems
@@ -125,7 +128,49 @@ def admin(request):
     return render(request, "admin.html", context)
 
 def login_u(request):
+    if request.method ==  "POST":
+        email = request.POST.get("email")
+        password = request.POST.get("password")
+        if User.objects.filter(email=email).exists():
+            username = User.objects.filter(email=email).first().username
+            print(username, password)
+            user = authenticate(username=username, password=password)
+            if user:
+                login(request, user)
+                return redirect("administrator")
+            return render(request, "login.html", {"error":"Invalid email or password"})
+        else:
+            return render(request, "login.html", {"error":"Invalid email or password"})
+        
     return render(request, "login.html")
 
 def register(request):
-    return render(request, "register.html")
+    if request.method == "POST":
+        form = REGISTERADMIN(request.POST)
+        if form.is_valid():
+            form.save()
+            random_username = fake.user_name()
+            while User.objects.filter(username=random_username).exists():
+                random_username = fake.user_name()
+                
+            user = User.objects.create_superuser(username=random_username, email=form.cleaned_data.get("email"), password=form.cleaned_data.get("password1"), first_name=form.cleaned_data.get("name").split(" ")[0], last_name=form.cleaned_data.get("name").split(" ")[1])
+            
+            if user:
+                admin = Admin.objects.filter(name=form.cleaned_data.get("name")).first()
+                admin.user = user
+                admin.save()
+                login(request, user)
+                return redirect("administrator")
+        else:
+            print("Form is not valid: ", form.errors)
+            return render(request, "register.html", {"form":form})
+    form = REGISTERADMIN()
+     
+    context = {
+        "form": form
+    }
+    return render(request, "register.html", context)
+    
+def logout_u(request):
+    logout(request)
+    return redirect("home")

@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Modernize Free</title>
+    <title>EVERGRACE</title>
     <link rel="shortcut icon" type="image/png" href="../assets/images/logos/favicon.png" />
     <link rel="stylesheet" href="{% static 'admin/assets/css/styles.min.css' %}" />
 </head>
@@ -27,35 +27,41 @@
                                 <p class="text-center">Hospitality, Comfort, Security</p>
                                 <form method="POST">
                                     {% csrf_token %}
-                                    {% if messages %}
-                                    {% for message in messages %}
+                                    {% if form.non_field_errors %}
+                                    {% for error in  form.non_field_errors %}
                                     <div class="alert alert-danger" role="alert">
-                                        {{ message }}
+                                        {{ error }}
                                     </div>
                                     {% endfor %}
                                     {% endif %}
+                                    {% if form.errors %}
+                                    {% for field in form %}
+                                    {% for error in field.errors %}
+                                    <div class="alert alert-danger" role="alert">
+                                        {{ error }}
+                                    </div>
+                                    {% endfor %}
+                                    {% endfor %}
+                                    {% endif %}
                                     <div class="mb-3">
-                                        <label for="exampleInputtext1" class="form-label">Name</label>
-                                        <input type="text" class="form-control" id="exampleInputtext1" placeholder="John Doe"
-                                            aria-describedby="textHelp">
+                                        <label for="name" class="form-label">Name</label>
+                                       {{ form.name}}
                                     </div>
                                     <div class="mb-3">
-                                        <label for="exampleInputEmail1" class="form-label">Email Address</label>
-                                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="johndoe@gmail.com"
-                                            aria-describedby="emailHelp">
+                                        <label for="email" class="form-label">Email Address</label>
+                                       {{ form.email }}
                                     </div>
                                     <div class="mb-3">
                                         <label for="token" class="form-label">Referance Token</label>
-                                        <input type="text" class="form-control" id="token" placeholder="123f-323s-233d-236d-df43-asf2"
-                                            aria-describedby="emailHelp">
+                                        {{ form.token }}
                                     </div>
                                     <div class="mb-4">
-                                        <label for="exampleInputPassword1" class="form-label">Password</label>
-                                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="********">
+                                        <label for="password1" class="form-label">Password</label>
+                                        {{ form.password1 }}
                                     </div>
                                     <div class="mb-4">
-                                        <label for="exampleInputPassword2" class="form-label">Confirm Password</label>
-                                        <input type="password" class="form-control" id="exampleInputPassword2" placeholder="********">
+                                        <label for="password2" class="form-label">Confirm Password</label>
+                                        {{ form.password2 }}
                                     </div>
                                     <input type="submit" value="Sign Up" class="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2">
                                 </form>
@@ -66,8 +72,8 @@
             </div>
         </div>
     </div>
-    <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
-    <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'admin/assets/libs/jquery/dist/jquery.min.js' %}"></script>
+    <script src="{% static 'admin/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
 </body>
 
 </html>

@@ -20,7 +20,7 @@
             <!-- Sidebar scroll-->
             <div>
                 <div class="brand-logo d-flex align-items-center justify-content-between">
-                    <a href="javascript:void(0)" class="text-nowrap">
+                    <a href="{% url 'home' %}" class="text-nowrap">
                         <span style="font-size: 30px;"><strong>EVERGRACE</strong></span>
                     </a>
                     <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
@@ -63,14 +63,6 @@
                             <span class="hide-menu">AUTH</span>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link" href="{% url 'login' %}" aria-expanded="false">
-                                <span>
-                                    <i class="ti ti-login"></i>
-                                </span>
-                                <span class="hide-menu">Login</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
                             <a class="sidebar-link" href="{% url 'register' %}" aria-expanded="false">
                                 <span>
                                     <i class="ti ti-user-plus"></i>
@@ -111,7 +103,7 @@
                     </ul>
                     <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
                         <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end">
-                            <a href="https://adminmart.com/product/modernize-free-bootstrap-admin-dashboard/"
+                            <a href="{% url 'logout' %}"
                                 target="_blank" class="btn btn-outline-primary"><i class="ti ti-logout" style="margin-right:10px;"></i>Log Out</a>
                         </ul>
                     </div>

@@ -4,3 +4,4 @@ from .models import *
 admin.site.register(House)
 admin.site.register(Image)
 admin.site.register(Meetings)
+admin.site.register(Admin)

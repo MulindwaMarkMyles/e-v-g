@@ -24,7 +24,11 @@
 </head>
 
 <body>
-
+    <!-- ****** Preloader Start ****** -->
+    <div class="preloader-container" id="preloader">
+    </div>
+    <!-- ****** Preloader end ****** -->
+    
     <!-- ***** Header Area Start ***** -->
     <header class="header-area header-sticky">
         <div class="container">
@@ -72,6 +76,7 @@
                         <li><a href="{% url 'contacts' %}">Send a message</a></li>
                         <li><a href="{% url 'sitemap' %}">Site map</a></li>
                         <li><a href="{% url 'schedule-meeting' %}">Schedule a meeting</a></li>
+                        <li><a href="{% url 'login' %}">Login</a></li>
                     </ul>
                 </div>
             </div>
@@ -95,6 +100,13 @@
         </div>
     </footer>
 
-
+    <script>
+        var loader = document.getElementById("preloader");
+        window.addEventListener("load", () => {
+            setTimeout(() => {
+                loader.style.display = "none";
+            }, 1000)
+        })
+    </script>
 </body>
 </html>
