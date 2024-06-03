@@ -25,7 +25,7 @@ def home(request):
     houses_and_images = zip(houses, images)
     
     context = {
-        "title":"EVERGRACE APARTMENTS",
+        "title":"SK-GRACE APARTMENTS",
         "page":"home",
         "house":random_house,
         "booked":booked,
@@ -45,7 +45,7 @@ def properties(request):
     houses_and_images = zip(houses, images)
     
     context = {
-        "title":"EVERGRACE APARTMENTS",
+        "title":"SK-GRACE APARTMENTS",
         "houses":houses_and_images,
         "page":"Properties"
     }
@@ -56,7 +56,7 @@ def details(request, id):
     house = House.objects.filter(id=id).first()
     images = house.image_set.all()
     context = {
-        "title":"EVERGRACE APARTMENTS",
+        "title":"SK-GRACE APARTMENTS",
         "page":"details",
         "house":house,
         "images":images,
@@ -66,7 +66,7 @@ def details(request, id):
 
 def contacts(request):
     context = {
-        "title":"EVERGRACE APARTMENTS",
+        "title":"SK-GRACE APARTMENTS",
         "page":"contacts"
     }
     return render(request, "contact.html", context)
@@ -85,7 +85,7 @@ def upload(request):
         form = AddHouse()
     
     context = {
-        "title":"EVERGRACE APARTMENTS",
+        "title":"SK-GRACE APARTMENTS",
         "form": form,
         
     }
@@ -93,7 +93,7 @@ def upload(request):
 
 def site_map(request):
     context = {
-        "title": "EVERGRACE APARTMENTS"
+        "title": "SK-GRACE APARTMENTS"
     }
     return render(request, "map.html", context)
 
@@ -109,12 +109,12 @@ def schedule(request):
         form = ScheduleMeeting()
         
     context = {
-        "title": "EVERGRACE APARTMENTS",
+        "title": "SK-GRACE APARTMENTS",
         "form":form
     }
     return render(request, "schedule.html", context)
     
-@login_required(login_url="/evergrace/admin/login/")
+@login_required(login_url="/sk-grace/admin/login/")
 def admin(request):
     houses = House.objects.all()
     house_and_image = []
