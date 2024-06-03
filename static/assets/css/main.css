@@ -927,22 +927,22 @@ Best Deal Style
 
 /* 
 ---------------------------------------------
-Properties Style
+houses Style
 --------------------------------------------- 
 */
 
-.properties .item {
+.houses .item {
   background-color: #fafafa;
   border-radius: 10px;
   padding: 30px;
   margin-bottom: 30px;
 }
 
-.properties .item img {
+.houses .item img {
   border-radius: 10px;
 }
 
-.properties .item span.category {
+.houses .item span.category {
   background-color: #fbd9cf;
   font-weight: 500;
   border-radius: 5px;
@@ -953,34 +953,34 @@ Properties Style
   margin-top: 25px;
 }
 
-.properties .item h4 {
+.houses .item h4 {
   font-size: 19px;
   margin: 25px 0px;
 }
 
-.properties .item h4 a {
+.houses .item h4 a {
   color: #1e1e1e;
 }
 
-.properties .item ul li {
+.houses .item ul li {
   display: inline-block;
   font-size: 15px;
   color: #4a4a4a;
   margin-right: 20px;
 }
 
-.properties .item ul li span {
+.houses .item ul li span {
   font-weight: 600;
   color: #1e1e1e;
 }
 
-.properties .item ul {
+.houses .item ul {
   border-bottom: 1px solid #eaeaea;
   margin-bottom: 30px;
   padding-bottom: 30px;
 }
 
-.properties .item h6 {
+.houses .item h6 {
   font-size: 20px;
   color: #407076;
   margin-top: 6px;
@@ -989,7 +989,7 @@ Properties Style
   margin-top: 30px;
 }
 
-.properties .item .main-button {
+.houses .item .main-button {
   text-align: center;
 }
 
@@ -1073,7 +1073,7 @@ Contact Style
 .contact-content #contact-form input {
   width: 100%;
   height: 44px;
-  border-radius: 22px;
+  border-radius: 5px;
   background-color: #f6f6f6;
   border: none;
   margin-bottom: 30px;
@@ -1085,7 +1085,7 @@ Contact Style
   width: 100%;
   height: 150px;
   max-height: 180px;
-  border-radius: 22px;
+  border-radius: 5px;
   background-color: #f6f6f6;
   border: none;
   margin-bottom: 40px;
@@ -1186,22 +1186,22 @@ Page Header Style
 
 /* 
 ---------------------------------------------
-Properties Style
+houses Style
 --------------------------------------------- 
 */
 
-.properties ul.properties-filter {
+.houses ul.houses-filter {
   list-style: none;
   text-align: center;
   margin-bottom: 70px;
 }
 
-.properties ul.properties-filter li {
+.houses ul.houses-filter li {
   display: inline-block;
   margin: 5px 8px;
 }
 
-.properties ul.properties-filter li a {
+.houses ul.houses-filter li a {
   display: inline-block;
   text-align: center;
   font-size: 15px;
@@ -1214,32 +1214,32 @@ Properties Style
   transition: all .3s;
 }
 
-.properties ul.properties-filter li a.is_active {
+.houses ul.houses-filter li a.is_active {
   background-color: #407076;
   color: #fff;
 }
 
-.properties ul.properties-filter li a.is_active:hover {
+.houses ul.houses-filter li a.is_active:hover {
   color: #fff;
 }
 
-.properties ul.properties-filter li a:hover {
+.houses ul.houses-filter li a:hover {
   color: #407076;
 }
 
-.properties ul.pagination {
+.houses ul.pagination {
   margin-top: 50px;
   text-align: center;
   width: 100%;
   display: inline-block;
 }
 
-.properties ul.pagination li {
+.houses ul.pagination li {
   display: inline-block;
   margin: 0px 5px;
 }
 
-.properties ul.pagination li a {
+.houses ul.pagination li a {
   display: inline-block;
   width: 40px;
   height: 40px;
@@ -1253,8 +1253,8 @@ Properties Style
   transition: all .3s;
 }
 
-.properties ul.pagination li a:hover,
-.properties ul.pagination li a.is_active {
+.houses ul.pagination li a:hover,
+.houses ul.pagination li a.is_active {
   background-color: #407076;
   color: #fff;
 }
@@ -1430,7 +1430,7 @@ Contact Page Style
 .contact-page #contact-form input {
   width: 100%;
   height: 44px;
-  border-radius: 22px;
+  border-radius: 5px;
   background-color: #f6f6f6;
   border: none;
   margin-bottom: 30px;
@@ -1442,7 +1442,7 @@ Contact Page Style
   width: 100%;
   height: 150px;
   max-height: 180px;
-  border-radius: 22px;
+  border-radius: 5px;
   background-color: #f6f6f6;
   border: none;
   margin-bottom: 40px;
@@ -1490,11 +1490,11 @@ body {
   .best-deal .tabs-content ul.nav-tabs li {
     margin: 0px 5px;
   }
-  .properties ul.properties-filter li a {
+  .houses ul.houses-filter li a {
     font-size: 14px;
     padding: 10px 15px;
   }
-  .properties ul.properties-filter li {
+  .houses ul.houses-filter li {
     margin: 5px;
   }
 }
@@ -1550,14 +1550,14 @@ body {
   .best-deal .tabs-content h4 {
     margin-top: 45px;
   }
-  .properties .item h6 {
+  .houses .item h6 {
     text-align: center;
     margin-bottom: 15px;
   }
-  .properties .item .main-button {
+  .houses .item .main-button {
     text-align: center;
   }
-  .properties .item ul li {
+  .houses .item ul li {
     margin-right: 10px;
     font-size: 13px;
   }
@@ -1677,4 +1677,22 @@ Misc
     height:100vh;
     width:100%;
     transition: all 0.4s ease-in;
+}
+
+/* messages */
+.messages-index {
+    position:fixed;
+    top:100px;
+    right:0px;
+    border-radius: 7px;
+    background-color: #407076;
+    padding:10px 20px;
+    z-index:10000;
+    transition: all 0.5s linear;
+}
+.messages-index ul {
+    list-style: none;
+}
+.messages-index .message {
+    color:#ffffff;
 }

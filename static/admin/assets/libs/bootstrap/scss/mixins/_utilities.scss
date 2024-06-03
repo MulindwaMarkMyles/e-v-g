@@ -9,15 +9,15 @@
   }
 
   @each $key, $value in $values {
-    $properties: map-get($utility, property);
+    $houses: map-get($utility, property);
 
-    // Multiple properties are possible, for example with vertical or horizontal margins or paddings
-    @if type-of($properties) == "string" {
-      $properties: append((), $properties);
+    // Multiple houses are possible, for example with vertical or horizontal margins or paddings
+    @if type-of($houses) == "string" {
+      $houses: append((), $houses);
     }
 
     // Use custom class if present
-    $property-class: if(map-has-key($utility, class), map-get($utility, class), nth($properties, 1));
+    $property-class: if(map-has-key($utility, class), map-get($utility, class), nth($houses, 1));
     $property-class: if($property-class == null, "", $property-class);
 
     // Use custom CSS variable name if present, otherwise default to `class`
@@ -65,7 +65,7 @@
         }
       } @else {
         .#{$property-class + $infix + $property-class-modifier} {
-          @each $property in $properties {
+          @each $property in $houses {
             @if $is-local-vars {
               @each $local-var, $variable in $is-local-vars {
                 --#{$prefix}#{$local-var}: #{$variable};
@@ -77,7 +77,7 @@
 
         @each $pseudo in $state {
           .#{$property-class + $infix + $property-class-modifier}-#{$pseudo}:#{$pseudo} {
-            @each $property in $properties {
+            @each $property in $houses {
               @if $is-local-vars {
                 @each $local-var, $variable in $is-local-vars {
                   --#{$prefix}#{$local-var}: #{$variable};

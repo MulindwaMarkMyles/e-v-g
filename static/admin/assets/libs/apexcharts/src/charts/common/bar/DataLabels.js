@@ -10,7 +10,7 @@ export default class BarDataLabels {
    * It also sets the element's data attr for bars and calls drawCalculatedBarDataLabels()
    * After calculating, it also calls the function to draw data labels
    * @memberof Bar
-   * @param {object} {barProps} most of the bar properties used throughout the bar
+   * @param {object} {barProps} most of the bar houses used throughout the bar
    * drawing function
    * @return {object} dataLabels node-element which you can append later
    **/

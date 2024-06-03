@@ -372,7 +372,7 @@ export default class Helpers {
   /** getRoundedBars draws border radius for bars/columns
    * @memberof Bar
    * @param {object} w - chart context
-   * @param {object} opts - consists several properties like barHeight/barWidth
+   * @param {object} opts - consists several houses like barHeight/barWidth
    * @param {array} series - global primary series
    * @param {int} i - current iterating series's index
    * @param {int} j - series's j of i

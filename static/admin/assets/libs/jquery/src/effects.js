@@ -293,7 +293,7 @@ function propFilter( props, specialEasing ) {
 	}
 }
 
-function Animation( elem, properties, options ) {
+function Animation( elem, houses, options ) {
 	var result,
 		stopped,
 		index = 0,
@@ -339,12 +339,12 @@ function Animation( elem, properties, options ) {
 		},
 		animation = deferred.promise( {
 			elem: elem,
-			props: jQuery.extend( {}, properties ),
+			props: jQuery.extend( {}, houses ),
 			opts: jQuery.extend( true, {
 				specialEasing: {},
 				easing: jQuery.easing._default
 			}, options ),
-			originalProperties: properties,
+			originalhouses: houses,
 			originalOptions: options,
 			startTime: fxNow || createFxNow(),
 			duration: options.duration,

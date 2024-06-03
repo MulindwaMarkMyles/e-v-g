@@ -56,11 +56,13 @@ class Admin(models.Model):
     
 class Messages(models.Model):
     name = models.CharField(max_length=150)
+    email = models.EmailField(null=True, blank=True)
+    subject = models.CharField(null=True, blank=True, max_length=100)
     message = models.TextField()
     
     class Meta:
         verbose_name_plural = "Messages"
     
     def __str__(self):
-        return f"{self.message[50]}... by {self.name}"
+        return f"{self.message[:50]}... by {self.name}"
     

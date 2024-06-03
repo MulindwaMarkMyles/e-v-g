@@ -19,14 +19,14 @@ SimpleBar is meant to be as easy to use as possible and lightweight. If you want
 
 ```html
 <link
-  rel="stylesheet"
-  href="https://unpkg.com/simplebar@latest/dist/simplebar.css"
+	rel="stylesheet"
+	href="https://unpkg.com/simplebar@latest/dist/simplebar.css"
 />
 <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
 <!-- or -->
 <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css"
+	rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css"
 />
 <script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
 ```
@@ -43,8 +43,8 @@ If you are using Gatsby, please see [#345](https://github.com/Grsmto/simplebar/i
 If you are using a module loader (like Webpack) you first need to load SimpleBar:
 
 ```js
-import 'simplebar'; // or "import SimpleBar from 'simplebar';" if you want to use it manually.
-import 'simplebar/dist/simplebar.css';
+import "simplebar"; // or "import SimpleBar from 'simplebar';" if you want to use it manually.
+import "simplebar/dist/simplebar.css";
 ```
 
 Set `data-simplebar` on the element you want your custom scrollbar. You're done.
@@ -78,7 +78,7 @@ SimpleBar is **not intended to be used on the `body` element!** I don't recommen
 
 ### Troubleshooting
 
-If you are experiencing issues when setting up SimpleBar, it is most likely because your styles are clashing with SimpleBar ones. Make sure the element you are setting SimpleBar on does not override any SimpleBar css properties! **We recommend to not style that element at all and use an inner element instead.**
+If you are experiencing issues when setting up SimpleBar, it is most likely because your styles are clashing with SimpleBar ones. Make sure the element you are setting SimpleBar on does not override any SimpleBar css houses! **We recommend to not style that element at all and use an inner element instead.**
 
 ### Sponsors
 
@@ -104,28 +104,28 @@ Thanks to BrowserStack for sponsoring open source projects and letting us test S
 You can start SimpleBar manually if you need to:
 
 ```js
-new SimpleBar(document.getElementById('myElement'));
+new SimpleBar(document.getElementById("myElement"));
 ```
 
 or
 
 ```js
 Array.prototype.forEach.call(
-  document.querySelectorAll('.myElements'),
-  el => new SimpleBar()
+	document.querySelectorAll(".myElements"),
+	(el) => new SimpleBar()
 );
 ```
 
 If you want to use jQuery:
 
 ```js
-new SimpleBar($('#myElement')[0]);
+new SimpleBar($("#myElement")[0]);
 ```
 
 or
 
 ```js
-$('.myElements').each(element, new SimpleBar());
+$(".myElements").each(element, new SimpleBar());
 ```
 
 ### Styling
@@ -133,9 +133,10 @@ $('.myElements').each(element, new SimpleBar());
 The default styling is applied with CSS. There is no "built-in" way to style the scrollbar, you just need to override the default CSS.
 
 Ex, to change the color of the scrollbar:
+
 ```css
 .simplebar-scrollbar::before {
-  background-color: red;
+	background-color: red;
 }
 ```
 
@@ -144,9 +145,9 @@ Ex, to change the color of the scrollbar:
 Options can be applied to the plugin during initialization:
 
 ```js
-new SimpleBar(document.getElementById('myElement'), {
-  option1: value1,
-  option2: value2
+new SimpleBar(document.getElementById("myElement"), {
+	option1: value1,
+	option2: value2,
 });
 ```
 
@@ -163,7 +164,7 @@ Available options are:
 By default SimpleBar automatically hides the scrollbar if the user is not scrolling (it emulates Mac OSX Lion's scrollbar). You can make the scrollbar always visible by setting the `autoHide` option to `false`:
 
 ```js
-new SimpleBar(document.getElementById('myElement'), { autoHide: false });
+new SimpleBar(document.getElementById("myElement"), { autoHide: false });
 ```
 
 Default value is `true`.
@@ -247,7 +248,7 @@ Simply define in css `overflow-x: hidden` on your element.
 If later on you dynamically modify your content, for instance changing its height or width, or adding or removing content, you should recalculate the scrollbars like so:
 
 ```js
-const simpleBar = new SimpleBar(document.getElementById('myElement'));
+const simpleBar = new SimpleBar(document.getElementById("myElement"));
 simpleBar.recalculate();
 ```
 
@@ -256,7 +257,7 @@ simpleBar.recalculate();
 If you want to access to the original scroll element, you can retrieve it via a getter:
 
 ```js
-const simpleBar = new SimpleBar(document.getElementById('myElement'));
+const simpleBar = new SimpleBar(document.getElementById("myElement"));
 simpleBar.getScrollElement();
 ```
 
@@ -274,7 +275,7 @@ simpleBar.getScrollElement().addEventListener('scroll', function(...));
 You can retrieve the element containing data like this:
 
 ```js
-const simpleBar = new SimpleBar(document.getElementById('myElement'));
+const simpleBar = new SimpleBar(document.getElementById("myElement"));
 simpleBar.getContentElement();
 ```
 
@@ -293,9 +294,9 @@ SimpleBar.instances.get(document.querySelector('[data-simplebar]']))
 ### Unmount/destroy
 
 ```js
-const simpleBar = new SimpleBar(document.getElementById('myElement'));
+const simpleBar = new SimpleBar(document.getElementById("myElement"));
 
-simpleBar.unMount()
+simpleBar.unMount();
 ```
 
 :warning: **Calling this function will not restore the default scrollbar!**
@@ -316,11 +317,11 @@ SimpleBar hides the browser's default scrollbars, which obviously is undesirable
 
 ```html
 <noscript>
-  <style>
-    [data-simplebar] {
-      overflow: auto;
-    }
-  </style>
+	<style>
+		[data-simplebar] {
+			overflow: auto;
+		}
+	</style>
 </noscript>
 ```
 

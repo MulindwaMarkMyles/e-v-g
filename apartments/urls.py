@@ -3,7 +3,7 @@ from .views import *
 
 urlpatterns = [
     path("", home, name="home"),
-    path("properties/", properties, name="properties"),
+    path("houses/", houses, name="houses"),
     path("sk-grace/admin/login/", login_u, name="login"),
     path("sk-grace/admin/logout/", logout_u, name="logout"),
     path("sk-grace/admin/register/", register, name="register"),

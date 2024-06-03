@@ -1,3 +1,4 @@
+/* houses */
 .houses {
     display: flex;
     flex-wrap: wrap;
@@ -25,6 +26,7 @@
     font-size: 1.7rem;
     margin-bottom: 40px;
 }
+/* users */
 .users {
     display: flex;
     flex-direction: column;
@@ -40,7 +42,7 @@
     padding: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
 }
-
+/* messages */
 .messages {
     display: flex;
     flex-direction: column;
@@ -57,7 +59,35 @@
     padding: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
 }
+.message .person-details {
+    display: flex;
+    justify-content: left;
+    gap:15px;
+}
 
+/* meetings */
+.meetings {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.meetings .meeting-details {
+    flex: 1;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+}
+
+.meeting-details .house-meeting-details {
+    display: flex;
+    justify-content: left;
+    gap: 15px;
+}
 ::-webkit-scrollbar {
     width: 12px;
     height: 12px;
@@ -87,3 +117,4 @@ body {
     scrollbar-width: thin;
     scrollbar-color: #888 #f1f1f1;
 }
+

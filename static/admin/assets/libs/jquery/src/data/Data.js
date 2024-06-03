@@ -57,10 +57,10 @@ Data.prototype = {
 		if ( typeof data === "string" ) {
 			cache[ camelCase( data ) ] = value;
 
-		// Handle: [ owner, { properties } ] args
+		// Handle: [ owner, { houses } ] args
 		} else {
 
-			// Copy the properties one-by-one to the cache object
+			// Copy the houses one-by-one to the cache object
 			for ( prop in data ) {
 				cache[ camelCase( prop ) ] = data[ prop ];
 			}
@@ -96,7 +96,7 @@ Data.prototype = {
 		// When the key is not a string, or both a key and value
 		// are specified, set or extend (existing objects) with either:
 		//
-		//   1. An object of properties
+		//   1. An object of houses
 		//   2. A key and value
 		//
 		this.set( owner, key, value );
@@ -142,7 +142,7 @@ Data.prototype = {
 		if ( key === undefined || jQuery.isEmptyObject( cache ) ) {
 
 			// Support: Chrome <=35 - 45
-			// Webkit & Blink performance suffers when deleting properties
+			// Webkit & Blink performance suffers when deleting houses
 			// from DOM nodes, so set to undefined instead
 			// https://bugs.chromium.org/p/chromium/issues/detail?id=378607 (bug restricted)
 			if ( owner.nodeType ) {

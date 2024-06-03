@@ -50,11 +50,11 @@
 		}
 	})
 
-	const elem = document.querySelector('.properties-box');
-	const filtersElem = document.querySelector('.properties-filter');
+	const elem = document.querySelector('.houses-box');
+	const filtersElem = document.querySelector('.houses-filter');
 	if (elem) {
 		const rdn_events_list = new Isotope(elem, {
-			itemSelector: '.properties-items',
+			itemSelector: '.houses-items',
 			layoutMode: 'masonry'
 		});
 		if (filtersElem) {

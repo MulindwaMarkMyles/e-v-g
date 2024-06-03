@@ -128,7 +128,7 @@ export default class Animations {
   }
 
   /*
-   ** Animate rect properties
+   ** Animate rect houses
    */
   animateRect(el, from, to, speed, fn) {
     el.attr(from)

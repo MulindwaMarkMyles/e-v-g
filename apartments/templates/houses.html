@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+        
+    <div class="page-heading header-text">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <span class="breadcrumb"><a href="#">Home</a> / houses</span>
+                    <h3>houses</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section houses">
+        <div class="container">
+            <ul class="houses-filter">
+                <li>
+                    <a class="is_active" href="#!" data-filter="*">Show All</a>
+                </li>
+                <li>
+                    <a href="#!" data-filter=".1">ONE BEDROOM</a>
+                </li>
+                <li>
+                    <a href="#!" data-filter=".2">TWO BEDROOMS</a>
+                </li>
+                <li>
+                    <a href="#!" data-filter=".3">THREE BEDROOMS</a>
+                </li>
+            </ul>
+            <div class="row houses-box">
+                {% for house,image in houses %}
+                <div class="col-lg-4 col-md-6 align-self-center mb-30 houses-items col-md-6 {{ house.tag }}">
+                    <div class="item">
+                        <a href="{% url 'details' house.id %}"><img src="{{ image.image.url }}" alt=""></a>
+                        <span class="category">{{ house.type }}</span>
+                        <h6>UGX {{ house.price }}</h6>
+                        <h4><a href=""></a></h4>
+                            <ul>
+                                <li><i class="fas  fa-house"></i> Bedrooms: <span>{{ house.bedrooms }}</span></li>
+                                {% if house.taken %}
+                                <li><i class="fa fa-check-double"></i> Taken: <span>Yes</span></li>
+                                {% else %}
+                                <li><i class="fa fa-check-double"></i> Taken: <span>No</span></li>
+                                {% if house.booked %}
+                                <li><i class="fa fa-check"> </i>Booked: <span>Yes</span></li>
+                                {% else %}
+                                <li><i class="fa fa-check"> </i>Booked: <span>No</span></li>
+                                {% endif %}
+                                {% endif %}
+                                <li><i class="fa fa-list-ol"></i> Floor: <span>{{ house.floor }}</span></li>
+                            </ul>
+                        <div class="main-button">
+                            <a href="property-details.html">Schedule a visit</a>
+                            <a href="{% url 'details' house.id %}">View</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Scripts -->
+    <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/js/isotope.min.js' %}"></script>
+    <script src="{% static 'assets/js/owl-carousel.js' %}"></script>
+    <script src="{% static 'assets/js/counter.js' %}"></script>
+    <script src="{% static 'assets/js/custom.js' %}"></script>
+
+{% endblock %}

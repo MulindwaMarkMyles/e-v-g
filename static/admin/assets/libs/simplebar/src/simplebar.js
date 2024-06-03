@@ -68,7 +68,7 @@ export default class SimpleBar {
   }
 
   /**
-   * Static properties
+   * Static houses
    */
 
   /**

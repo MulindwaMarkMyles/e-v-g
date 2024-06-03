@@ -27,7 +27,15 @@
 
     </style>
 
-    
+    <div class="messages-index" id="message-index">
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li class="message">{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
 
     <div class="main-banner">
         <div class="">
@@ -163,15 +171,13 @@
             <div class="row">
                 <div class="col-lg-10 offset-lg-1">
                     <div class="video-frame">
-                        <img src="{% static 'assets/images/video-frame.jpg' %}" alt="">
+                        <img src="{% static 'images/fresh-ones/image-video.jpg' %}" alt="">
                         <a href="https://youtube.com" target="_blank"><i class="fa fa-play"></i></a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-  
 
     <div class="section best-deal">
         <div class="container">
@@ -216,7 +222,7 @@
 
                                             </p>
                                             <div class="icon-button">
-                                                <a href="#"><i class="fa fa-calendar"></i> Schedule
+                                                <a href="{% url 'schedule-meeting' %}"><i class="fa fa-calendar"></i> Schedule
                                                     a visit</a>
                                             </div>
                                         </div>
@@ -230,12 +236,12 @@
         </div>
     </div>
 
-    <div class="properties section">
+    <div class="houses section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 offset-lg-4">
                     <div class="section-heading text-center">
-                        <h6>| Properties</h6>
+                        <h6>| houses</h6>
                         <h2>We Provide The Best Apartments</h2>
                     </div>
                 </div>
@@ -263,7 +269,7 @@
                             <li><i class="fa fa-list-ol"></i> Floor: <span>{{ house.floor }}</span></li>
                         </ul>
                         <div class="main-button">
-                            <a href="#">Schedule a visit</a>
+                            <a href="{% url 'schedule-meeting' %}">Schedule a visit</a>
                             <a href="{% url 'details' house.id %}">View</a>
                         </div>
                     </div>
@@ -316,6 +322,7 @@
                 </div>
                 <div class="col-lg-5" id="visit">
                     <form id="contact-form" action="" method="POST">
+                        {% csrf_token %}
                         <div class="row">
                             <div class="col-lg-12">
                                 <fieldset>
@@ -328,20 +335,20 @@
                                 <fieldset>
                                     <label for="email">Email Address</label>
                                     <input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*"
-                                        placeholder="Your E-mail..." required="">
+                                        placeholder="Your E-mail..." required>
                                 </fieldset>
                             </div>
                             <div class="col-lg-12">
                                 <fieldset>
                                     <label for="subject">Subject</label>
                                     <input type="subject" name="subject" id="subject" placeholder="Subject..."
-                                        autocomplete="on">
+                                        autocomplete="on" required>
                                 </fieldset>
                             </div>
                             <div class="col-lg-12">
                                 <fieldset>
                                     <label for="message">Message</label>
-                                    <textarea name="message" id="message" placeholder="Your Message"></textarea>
+                                    <textarea name="message" id="message" placeholder="Your Message" required></textarea>
                                 </fieldset>
                             </div>
                             <div class="col-lg-12">
@@ -395,6 +402,15 @@
             }
             img[index - 1].style.display = "block";
             sliders[index - 1].style.background = "white";
+        }
+    </script>
+    <script>
+        const messages = document.getElementById("message-index")
+        
+        if (messages.innerHTML != "") {
+            setTimeout(() => {
+                messages.style.display = "none";
+            }, 7000);
         }
     </script>
 

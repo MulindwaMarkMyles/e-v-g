@@ -35,10 +35,10 @@
   padding: var(--#{$prefix}navbar-padding-y) var(--#{$prefix}navbar-padding-x);
   @include gradient-bg();
 
-  // Because flex properties aren't inherited, we need to redeclare these first
-  // few properties so that content nested within behave properly.
+  // Because flex houses aren't inherited, we need to redeclare these first
+  // few houses so that content nested within behave properly.
   // The `flex-wrap` property is inherited to simplify the expanded navbars
-  %container-flex-properties {
+  %container-flex-houses {
     display: flex;
     flex-wrap: inherit;
     align-items: center;
@@ -47,12 +47,12 @@
 
   > .container,
   > .container-fluid {
-    @extend %container-flex-properties;
+    @extend %container-flex-houses;
   }
 
   @each $breakpoint, $container-max-width in $container-max-widths {
     > .container#{breakpoint-infix($breakpoint, $container-max-widths)} {
-      @extend %container-flex-properties;
+      @extend %container-flex-houses;
     }
   }
 }

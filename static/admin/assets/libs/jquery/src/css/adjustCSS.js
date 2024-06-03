@@ -50,7 +50,7 @@ function adjustCSS( elem, prop, valueParts, tween ) {
 		initialInUnit = initialInUnit * 2;
 		jQuery.style( elem, prop, initialInUnit + unit );
 
-		// Make sure we update the tween properties later on
+		// Make sure we update the tween houses later on
 		valueParts = valueParts || [];
 	}
 

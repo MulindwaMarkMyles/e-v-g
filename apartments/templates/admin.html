@@ -58,6 +58,14 @@
                                 <span class="hide-menu">Messages</span>
                             </a>
                         </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="javascript:showMeetings()" aria-expanded="false">
+                                <span>
+                                    <i class="ti ti-users"></i>
+                                </span>
+                                <span class="hide-menu">Meetings</span>
+                            </a>
+                        </li>
                         <li class="nav-small-cap">
                             <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
                             <span class="hide-menu">AUTH</span>
@@ -147,7 +155,6 @@
             <div class="container-fluid" id="user">
                 <h2>User Management</h2>
                 <div class="users">
-                    {% for i in "23424324344" %}
                     {% for user in users %}
                     <div class="user">
                         <div class="user-details">
@@ -163,7 +170,6 @@
                         </div>
                     </div>
                     {% endfor %}
-                    {% endfor %}
                 </div>
             </div>
             <!-- end User Management -->
@@ -171,18 +177,50 @@
             <div class="container-fluid" id="messages">
                 <h2>Messages</h2>
                 <div class="messages">
+                    {% if messages %}
+                    {% for message in messages %}
                     <div class="message">
                         <div class="message-details">
-                            <h4><i class="fa fa-user-circle" style="margin-right:10px;"></i>Ayman Kiggundu</h4>
+                            <div class="person-details">
+                                <h4><i class="fa fa-user-circle" style="margin-right:10px;"></i>{{ message.name }}</h4><h4>|</h4><h4>{{ message.subject }}</h4>
+                            </div>
                             <hr>
                             <p class="message-detail">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime expedita atque error hic voluptatibus asperiores. Sequi fuga nam cumque, vel dignissimos aut harum, doloribus rerum nihil amet quia a velit tempore repellendus voluptatem! Fugiat exercitationem aut, quis aliquam iusto quas fuga obcaecati amet, voluptate impedit itaque sit, alias incidunt ipsum?
+                                {{ message.message }}
                             </p>
                         </div>
                     </div>
+                    {% endfor %}
+                    {% endif %}
                 </div>
             </div>
             <!-- end messages -->
+            <!-- Meetings -->
+            <div class="container-fluid" id="meetings">
+                <h2>Meetings</h2>
+                <div class="meetings">
+                    {% if meetings %}
+                    {% for i in "23424234243424232342342343432424" %}
+                    {% for meeting in meetings %}
+                        <div class="meeting-details">
+                            <div class="house-meeting-details">
+                                <h4><i class="fa fa-user-circle" style="margin-right:10px;"></i>{{ meeting.fullname }}</h4>
+                                <h4>|</h4>
+                                <h4>{{ meeting.house }}</h4>
+                                <h4>|</h4>
+                                <h4>{{ meeting.date_scheduled }}</h4>
+                            </div>
+                            <hr>
+                            <p class="meeting-detail">
+                                {{ meeting.remarks }}
+                            </p>
+                        </div>
+                    {% endfor %}
+                    {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+            <!-- end meetings -->
         </div>
     </div>
 
@@ -193,20 +231,31 @@
         document.getElementById('houses').style.display = 'block';
         document.getElementById('user').style.display = 'none';
         document.getElementById('messages').style.display = 'none';
+        document.getElementById('meetings').style.display = 'none';
+        
         function showHouse() {
             document.getElementById('houses').style.display = 'block';
             document.getElementById('user').style.display = 'none';
             document.getElementById('messages').style.display = 'none';
+            document.getElementById('meetings').style.display = 'none';
         }
         function showMessages() {
             document.getElementById('houses').style.display = 'none';
             document.getElementById('user').style.display = 'none';
             document.getElementById('messages').style.display = 'block';
+            document.getElementById('meetings').style.display = 'none';
         }
         function showUsers() {
             document.getElementById('houses').style.display = 'none';
             document.getElementById('user').style.display = 'block';
             document.getElementById('messages').style.display = 'none';
+            document.getElementById('meetings').style.display = 'none';
+        }
+        function showMeetings() {
+            document.getElementById('houses').style.display = 'none';
+            document.getElementById('user').style.display = 'none';
+            document.getElementById('messages').style.display = 'none';
+            document.getElementById('meetings').style.display = 'block';
         }
     </script>
 

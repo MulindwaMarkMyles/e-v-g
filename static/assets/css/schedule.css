@@ -32,16 +32,12 @@
     outline: none;
 }
 .meeting-details button {
-    border:1px solid black;
-    border-radius:3px;
+    border-radius:22px;
     transition:all linear 0.2s;
-    background-color: white;
-    color:black;
-    padding:10px;
-    margin-top:20px;
-}
-.meeting-details button:hover {
-    background-color: #407076;
-    border-color: #407076;
+    background-color: black;
     color:white;
+    padding:10px 17px;
+    margin-top:20px;
+    width:fit-content;
+    border:none
 }

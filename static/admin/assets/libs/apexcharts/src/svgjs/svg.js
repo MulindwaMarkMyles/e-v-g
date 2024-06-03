@@ -3695,7 +3695,7 @@
     return SVG.adopt(node).id(SVG.eid(node.nodeName))
   }
 
-  // Add more bounding box properties
+  // Add more bounding box houses
   function fullBox (b) {
     if (b.x == null) {
       b.x = 0

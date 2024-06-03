@@ -198,7 +198,7 @@ jQuery.extend( {
 		}
 	},
 
-	// Don't automatically add "px" to these possibly-unitless properties
+	// Don't automatically add "px" to these possibly-unitless houses
 	cssNumber: {
 		"animationIterationCount": true,
 		"columnCount": true,
@@ -222,7 +222,7 @@ jQuery.extend( {
 		"zoom": true
 	},
 
-	// Add in properties whose names you wish to fix before
+	// Add in houses whose names you wish to fix before
 	// setting or getting the value
 	cssProps: {},
 
@@ -267,7 +267,7 @@ jQuery.extend( {
 				return;
 			}
 
-			// If a number was passed in, add the unit (except for certain CSS properties)
+			// If a number was passed in, add the unit (except for certain CSS houses)
 			// The isCustomProp check can be removed in jQuery 4.0 when we only auto-append
 			// "px" to a few hardcoded values.
 			if ( type === "number" && !isCustomProp ) {
@@ -427,7 +427,7 @@ jQuery.cssHooks.marginLeft = addGetHookIf( support.reliableMarginLeft,
 	}
 );
 
-// These hooks are used by animate to expand properties
+// These hooks are used by animate to expand houses
 jQuery.each( {
 	margin: "",
 	padding: "",

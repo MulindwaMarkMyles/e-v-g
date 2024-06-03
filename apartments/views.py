@@ -6,36 +6,52 @@ from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 import faker
+from django.contrib import messages
 
 fake = faker.Faker()
 
 def home(request):
-    random_house = House.objects.filter(id=6).first() # make this random after fixing all problems
-    taken = "No" if not random_house.taken else "Yes"
-    booked = "No" if not random_house.booked else "Yes"
-    images = random_house.image_set.all()
-    image = images[randint(0,(len(images) -1))]
-    
-    houses = House.objects.all()
-    images = []
-    
-    for house in houses:
-        images.append(house.image_set.all()[randint(0,(len(house.image_set.all()) -1))])
+    if request.method == 'POST':
+        name = request.POST.get("name")
+        email = request.POST.get("email")
+        subject = request.POST.get("subject")
+        message = request.POST.get("message")
         
-    houses_and_images = zip(houses, images)
-    
-    context = {
-        "title":"SK-GRACE APARTMENTS",
-        "page":"home",
-        "house":random_house,
-        "booked":booked,
-        "taken":taken,
-        "image": image,
-        "houses":houses_and_images
-    }
+        created_message = Messages.objects.create(name=name, email=email,subject=subject, message=message)
+        
+        if created_message:
+            messages.success(request,"Your message has been sent successfully.")
+            return redirect('home')
+        
+    else:
+        
+        random_house = House.objects.filter(id=6).first() # make this random after fixing all problems
+        taken = "No" if not random_house.taken else "Yes"
+        booked = "No" if not random_house.booked else "Yes"
+        images = random_house.image_set.all()
+        image = images[randint(0,(len(images) -1))]
+        
+        houses = House.objects.all()
+        images = []
+        
+        for house in houses:
+            images.append(house.image_set.all()[randint(0,(len(house.image_set.all()) -1))])
+            
+        houses_and_images = zip(houses, images)
+        
+        context = {
+            "title":"SK-GRACE APARTMENTS",
+            "page":"home",
+            "house":random_house,
+            "booked":booked,
+            "taken":taken,
+            "image": image,
+            "houses":houses_and_images
+        }
+        
     return render(request, "index.html", context)
 
-def properties(request):
+def houses(request):
     houses = House.objects.all()
     images = []
     
@@ -47,10 +63,10 @@ def properties(request):
     context = {
         "title":"SK-GRACE APARTMENTS",
         "houses":houses_and_images,
-        "page":"Properties"
+        "page":"houses"
     }
     
-    return render(request, "properties.html", context)
+    return render(request, "houses.html", context)
 
 def details(request, id):
     house = House.objects.filter(id=id).first()
@@ -65,10 +81,24 @@ def details(request, id):
     return render(request, "property-details.html", context)
 
 def contacts(request):
-    context = {
-        "title":"SK-GRACE APARTMENTS",
-        "page":"contacts"
-    }
+    if request.method == 'POST':
+        name = request.POST.get("name")
+        email = request.POST.get("email")
+        subject = request.POST.get("subject")
+        message = request.POST.get("message")
+        
+        created_message = Messages.objects.create(name=name, email=email,subject=subject, message=message)
+        
+        if created_message:
+            messages.success(request,"Your message has been sent successfully.")
+            return redirect('home')
+        
+    else:
+        context = {
+            "title":"SK-GRACE APARTMENTS",
+            "page":"contacts"
+        }
+        
     return render(request, "contact.html", context)
 
 def upload(request):
@@ -87,7 +117,6 @@ def upload(request):
     context = {
         "title":"SK-GRACE APARTMENTS",
         "form": form,
-        
     }
     return render(request, "upload.html", context)
 
@@ -117,13 +146,17 @@ def schedule(request):
 @login_required(login_url="/sk-grace/admin/login/")
 def admin(request):
     houses = House.objects.all()
+    messages = Messages.objects.all()
+    meetings = Meetings.objects.all()
     house_and_image = []
     users = User.objects.all()
     for house in houses:
         house_and_image.append((house, house.image_set.all()[randint(0,(len(house.image_set.all()) -1))]))
     context = {
         "house_and_image": house_and_image,
-        "users": users
+        "users": users,
+        "messages": messages,
+        "meetings": meetings
     }
     return render(request, "admin.html", context)
 
