@@ -392,8 +392,6 @@
             const sliders = document.querySelectorAll(".btn-sliders span");
             if (e > img.length) { index = 1 }
             if (e < 1) { index = img.length }
-            console.log(index)
-            console.log("count:" + img.length)
             for (i = 0; i < img.length; i++) {
                 img[i].style.display = "none";
             }
@@ -411,6 +409,10 @@
             setTimeout(() => {
                 messages.style.display = "none";
             }, 7000);
+        }
+        
+        if (messages.innerHTML === '\n        \n    ') {
+            messages.style.display = "none";
         }
     </script>
 

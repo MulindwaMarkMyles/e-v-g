@@ -200,22 +200,19 @@
                 <h2>Meetings</h2>
                 <div class="meetings">
                     {% if meetings %}
-                    {% for i in "23424234243424232342342343432424" %}
                     {% for meeting in meetings %}
                         <div class="meeting-details">
                             <div class="house-meeting-details">
                                 <h4><i class="fa fa-user-circle" style="margin-right:10px;"></i>{{ meeting.fullname }}</h4>
                                 <h4>|</h4>
-                                <h4>{{ meeting.house }}</h4>
-                                <h4>|</h4>
-                                <h4>{{ meeting.date_scheduled }}</h4>
+                                <h4>On {{ meeting.date_scheduled }}</h4>
                             </div>
                             <hr>
+                            <h5>HOUSE: {{ meeting.house }}</h5>
                             <p class="meeting-detail">
-                                {{ meeting.remarks }}
+                                REMARKS: {{ meeting.remarks }}
                             </p>
                         </div>
-                    {% endfor %}
                     {% endfor %}
                     {% endif %}
                 </div>
