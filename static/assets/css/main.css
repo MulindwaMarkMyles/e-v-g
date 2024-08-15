@@ -17,7 +17,7 @@ Table of contents
 font & reset css
 --------------------------------------------- 
 */
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    /* <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"> */
 
 /* 
 ---------------------------------------------
@@ -1669,7 +1669,7 @@ Misc
 }
 
 /* preloader */
-.preloader-container {
+/* .preloader-container {
     position: relative;
     z-index:10000;
     background: url(../../preloader/preloader.gif) center no-repeat;
@@ -1677,7 +1677,7 @@ Misc
     height:100vh;
     width:100%;
     transition: all 0.4s ease-in;
-}
+} */
 
 /* messages */
 .messages-index {
